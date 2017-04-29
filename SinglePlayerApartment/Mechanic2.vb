@@ -450,6 +450,7 @@ Public Class Mechanic2
         _Vehicle.SetMod(46, ReadCfgValue("ForthySix", VehicleCfgFile), True)
         _Vehicle.SetMod(47, ReadCfgValue("ForthySeven", VehicleCfgFile), True)
         _Vehicle.SetMod(48, ReadCfgValue("ForthyEight", VehicleCfgFile), True)
+        _Vehicle.SetMod(50, ReadCfgValue("RoofTrim", VehicleCfgFile), True)
         If ReadCfgValue("XenonHeadlights", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, True)
         If ReadCfgValue("Turbo", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.Turbo, True)
         _Vehicle.ToggleMod(VehicleToggleMod.TireSmoke, True)

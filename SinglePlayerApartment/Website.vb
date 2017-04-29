@@ -938,6 +938,7 @@ Public Class Website
             WriteCfgValue("ForthySix", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, VehPreview, 46), file)
             WriteCfgValue("ForthySeven", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, VehPreview, 47), file)
             WriteCfgValue("ForthyEight", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, VehPreview, 48), file)
+            WriteCfgValue("RoofTrim", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, VehPreview, 50), file)
             'Added on v1.3.1
             WriteCfgValue("VehicleHash", VehPreview.Model.GetHashCode().ToString, file)
             WriteCfgValue("VehicleRoof", Native.Function.Call(Of Integer)(Hash.GET_CONVERTIBLE_ROOF_STATE, VehPreview), file)

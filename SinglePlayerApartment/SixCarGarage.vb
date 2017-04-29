@@ -281,6 +281,7 @@ Public Class SixCarGarage
         _Vehicle.SetMod(46, ReadCfgValue("ForthySix", VehicleCfgFile), True)
         _Vehicle.SetMod(47, ReadCfgValue("ForthySeven", VehicleCfgFile), True)
         _Vehicle.SetMod(48, ReadCfgValue("ForthyEight", VehicleCfgFile), True)
+        _Vehicle.SetMod(50, ReadCfgValue("RoofTrim", VehicleCfgFile), True)
         If ReadCfgValue("XenonHeadlights", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, True)
         If ReadCfgValue("Turbo", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.Turbo, True)
         _Vehicle.ToggleMod(VehicleToggleMod.TireSmoke, True)
@@ -289,8 +290,8 @@ Public Class SixCarGarage
         If ReadCfgValue("BulletproofTyres", VehicleCfgFile) = "False" Then Native.Function.Call(Hash.SET_VEHICLE_TYRES_CAN_BURST, _Vehicle, False)
         'Added on v1.3.4
         'Fixed on v1.3.4.2
-        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.NumberPlate, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
-        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.NumberPlate, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
+        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
+        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.Handle, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
         'End of Added on v1.3.4
         _Vehicle.RoofState = CInt(ReadCfgValue("VehicleRoof", VehicleCfgFile))
         'Added on v1.3.3
@@ -516,6 +517,7 @@ Public Class SixCarGarage
         WriteCfgValue("ForthySix", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, playerPed.CurrentVehicle, 46), file)
         WriteCfgValue("ForthySeven", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, playerPed.CurrentVehicle, 47), file)
         WriteCfgValue("ForthyEight", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, playerPed.CurrentVehicle, 48), file)
+        WriteCfgValue("RoofTrim", Native.Function.Call(Of Integer)(Hash.GET_VEHICLE_MOD, playerPed.CurrentVehicle, 50), file)
         'Added on v1.3.1
         WriteCfgValue("VehicleHash", playerPed.CurrentVehicle.Model.GetHashCode().ToString, file)
         WriteCfgValue("VehicleRoof", Native.Function.Call(Of Integer)(Hash.GET_CONVERTIBLE_ROOF_STATE, playerPed.CurrentVehicle), file)
