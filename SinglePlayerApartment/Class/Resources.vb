@@ -341,6 +341,11 @@ Public Class Resources
                 Case VehicleClass.Utility, VehicleClass.Vans, VehicleClass.OffRoad, VehicleClass.Motorcycles, VehicleClass.Emergency, VehicleClass.Super, VehicleClass.SUVs, VehicleClass.Compacts, VehicleClass.Coupes, VehicleClass.Muscle, VehicleClass.Sedans, VehicleClass.SportsClassics, VehicleClass.Sports
                     Result = "Garage"
             End Select
+
+            ' The Guardian is a special case
+            If Vehicle.FriendlyName = "Guardian" Then
+                Result = "Garage"
+            End If
         Catch ex As Exception
             SinglePlayerApartment.DisplayHelpTextThisFrame("Update your fucking ScriptHookV.NET!!!")
         End Try
