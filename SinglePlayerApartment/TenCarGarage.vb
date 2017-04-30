@@ -388,6 +388,7 @@ Public Class TenCarGarage
         If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
         If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.Handle, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
         'End of Added on v1.3.4
+        If My.Settings.HasLowriderUpdate = True Then SetVehicleLivery2(_Vehicle, ReadCfgValue("Livery2", VehicleCfgFile))
         _Vehicle.RoofState = CInt(ReadCfgValue("VehicleRoof", VehicleCfgFile))
         'Added on v1.3.3
         If ReadCfgValue("ExtraOne", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
@@ -753,6 +754,7 @@ Public Class TenCarGarage
         'Added on v1.3.4
         WriteCfgValue("TrimColor", GetVehicleInteriorTrimColor2(playerPed.CurrentVehicle), file)
         WriteCfgValue("DashboardColor", GetVehicleInteriorDashboardColor2(playerPed.CurrentVehicle), file)
+        WriteCfgValue("Livery2", GetVehicleLivery2(playerPed.CurrentVehicle), file)
     End Sub
 
     Public Sub OnTick(o As Object, e As EventArgs)

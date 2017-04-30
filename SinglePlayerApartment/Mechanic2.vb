@@ -462,6 +462,7 @@ Public Class Mechanic2
         If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
         If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.Handle, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
         'End of Added on v1.3.4
+        If My.Settings.HasLowriderUpdate = True Then SetVehicleLivery2(_Vehicle, ReadCfgValue("Livery2", VehicleCfgFile))
         _Vehicle.IsPersistent = True
         _Vehicle.RoofState = CInt(ReadCfgValue("VehicleRoof", VehicleCfgFile))
         'Added on v1.3.3

@@ -955,6 +955,7 @@ Public Class Website
             'Added on v1.3.4
             WriteCfgValue("TrimColor", Resources.GetVehicleInteriorTrimColor(VehPreview), file)
             WriteCfgValue("DashboardColor", Resources.GetVehicleInteriorDashboardColor(VehPreview), file)
+            WriteCfgValue("Livery2", Resources.GetVehicleLivery2(VehPreview), file)
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try

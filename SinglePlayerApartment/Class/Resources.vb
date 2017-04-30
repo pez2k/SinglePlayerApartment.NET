@@ -330,6 +330,20 @@ Public Class Resources
         Return arg.GetResult(Of Integer)()
     End Function
 
+    Public Shared Function GetVehicleLivery2(Vehicle As Vehicle) As Integer
+        If My.Settings.HasLowriderUpdate = True Then
+            Return Native.Function.Call(Of Integer)(&H60190048C0764A26UL, Vehicle.Handle)
+        Else
+            Return 0
+        End If
+    End Function
+
+    Public Shared Sub SetVehicleLivery2(Vehicle As Vehicle, LiveryNumber As Integer)
+        If My.Settings.HasLowriderUpdate = True Then
+            Native.Function.Call(&HA6D3A8750DC73270UL, Vehicle.Handle, LiveryNumber)
+        End If
+    End Sub
+
     Public Shared Function GetVehicleClass(Vehicle As Vehicle) As String
         Dim Result As String = Nothing
         Try
