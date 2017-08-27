@@ -357,7 +357,7 @@ Public Class Resources
             End Select
 
             ' The Guardian, APC and Half-Track are special cases
-            If Vehicle.GetHashCode() = VehicleHash.Guardian Or Vehicle.GetHashCode() = VehicleHash.APC Or Vehicle.GetHashCode() = VehicleHash.HalfTrack Then
+            If Vehicle.DisplayName = "GUARDIAN" Or Vehicle.DisplayName = "APC" Or Vehicle.DisplayName = "HALFTRACK" Then
                 Result = "Garage"
             End If
         Catch ex As Exception
