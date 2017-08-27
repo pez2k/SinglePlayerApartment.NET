@@ -56,8 +56,8 @@
     <Reference Include="INMNativeUI">
       <HintPath>References\INMNativeUI.dll</HintPath>
     </Reference>
-    <Reference Include="ScriptHookVDotNet">
-      <HintPath>References\ScriptHookVDotNet.dll</HintPath>
+    <Reference Include="ScriptHookVDotNet2">
+      <HintPath>References\ScriptHookVDotNet2.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
