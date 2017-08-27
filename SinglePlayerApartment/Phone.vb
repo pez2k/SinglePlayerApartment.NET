@@ -10,7 +10,7 @@ Public Class Phone
     Public Shared ifruit As CustomiFruit
     Public Shared Contact(9) As iFruitContact
     Public Shared pHash As String
-    Public Shared phoneContact As String = ReadCfgValue("PhoneContact", settingFile)
+    Public Shared phoneContact As Boolean = ReadCfgBool("PhoneContact", settingFile)
     Public Shared FIndex As Integer = CInt(ReadCfgValue("FranklinPhoneIndex", settingFile))
     Public Shared MIndex As Integer = CInt(ReadCfgValue("MichaelPhoneIndex", settingFile))
     Public Shared TIndex As Integer = CInt(ReadCfgValue("TrevorPhoneIndex", settingFile))
@@ -108,7 +108,7 @@ Public Class Phone
 
     Public Sub OnTick(o As Object, e As EventArgs)
         Try
-            If phoneContact = "True" Then
+            If phoneContact Then
                 ifruit.Update()
 
                 If Game.IsControlJustPressed(0, GTA.Control.Phone) Then

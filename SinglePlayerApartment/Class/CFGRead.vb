@@ -14,6 +14,10 @@
         Return value
     End Function
 
+    Public Function ReadCfgBool(ByVal key As String, ByVal file As String) As Boolean
+        Return (ReadCfgValue(key, file) = "True")
+    End Function
+
     Public Sub WriteCfgValue(ByVal key As String, ByVal value As String, ByVal file__1 As String)
         Dim getext As String = file__1.Substring(file__1.LastIndexOf("."c))
         Dim tmp As String = file__1.Replace(getext, ".tmp")

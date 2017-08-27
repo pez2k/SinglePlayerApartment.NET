@@ -432,8 +432,8 @@ Public Class SinglePlayerApartment
             My.Settings.TlastPosX = Convert.ToSingle(ReadCfgValue("TlastPosX", saveFile))
             My.Settings.TlastPosY = Convert.ToSingle(ReadCfgValue("TlastPosY", saveFile))
             My.Settings.TlastPosZ = Convert.ToSingle(ReadCfgValue("TlastPosZ", saveFile))
-            Dim AlwaysEnableMPMaps As String = ReadCfgValue("AlwaysEnableMPMaps", settingFile)
-            If AlwaysEnableMPMaps = "True" Then
+            Dim AlwaysEnableMPMaps As Boolean = ReadCfgBool("AlwaysEnableMPMaps", settingFile)
+            If AlwaysEnableMPMaps Then
                 My.Settings.AlwaysEnableMPMaps = True
             Else
                 My.Settings.AlwaysEnableMPMaps = False
@@ -444,8 +444,8 @@ Public Class SinglePlayerApartment
             Else
                 My.Settings.HasLowriderUpdate = True
             End If
-            Dim NeverEnableMPMaps As String = ReadCfgValue("NeverEnableMPMaps", settingFile)
-            If NeverEnableMPMaps = "True" Then
+            Dim NeverEnableMPMaps As Boolean = ReadCfgBool("NeverEnableMPMaps", settingFile)
+            If NeverEnableMPMaps Then
                 My.Settings.NeverEnableMPMaps = True
             Else
                 My.Settings.NeverEnableMPMaps = False

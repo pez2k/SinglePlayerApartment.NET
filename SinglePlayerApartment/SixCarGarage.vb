@@ -76,7 +76,7 @@ Public Class SixCarGarage
 
             SetModKit(veh0, file, False)
             veh0.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh0.Delete()
+            If ReadCfgBool("Active", file) Then veh0.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -93,7 +93,7 @@ Public Class SixCarGarage
 
             SetModKit(veh1, file, False)
             veh1.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh1.Delete()
+            If ReadCfgBool("Active", file) Then veh1.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -110,7 +110,7 @@ Public Class SixCarGarage
 
             SetModKit(veh2, file, False)
             veh2.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh2.Delete()
+            If ReadCfgBool("Active", file) Then veh2.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -127,7 +127,7 @@ Public Class SixCarGarage
 
             SetModKit(veh3, file, False)
             veh3.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh3.Delete()
+            If ReadCfgBool("Active", file) Then veh3.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -144,7 +144,7 @@ Public Class SixCarGarage
 
             SetModKit(veh4, file, False)
             veh4.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh4.Delete()
+            If ReadCfgBool("Active", file) Then veh4.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -161,7 +161,7 @@ Public Class SixCarGarage
 
             SetModKit(veh5, file, False)
             veh5.Rotation = rot
-            If ReadCfgValue("Active", file) = "True" Then veh5.Delete()
+            If ReadCfgBool("Active", file) Then veh5.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -203,12 +203,12 @@ Public Class SixCarGarage
 
     Public Shared Sub RefreshGarageVehicles(file As String)
         Try
-            If IO.File.Exists(file & "vehicle_0.cfg") Then If ReadCfgValue("Active", file & "vehicle_0.cfg") = "False" AndAlso Not veh0.Exists Then LoadGarageVehicle0(file & "vehicle_0.cfg", veh0Pos, vehRot02, -60)
-            If IO.File.Exists(file & "vehicle_1.cfg") Then If ReadCfgValue("Active", file & "vehicle_1.cfg") = "False" AndAlso Not veh1.Exists Then LoadGarageVehicle1(file & "vehicle_1.cfg", veh1Pos, vehRot02, -60)
-            If IO.File.Exists(file & "vehicle_2.cfg") Then If ReadCfgValue("Active", file & "vehicle_2.cfg") = "False" AndAlso Not veh2.Exists Then LoadGarageVehicle2(file & "vehicle_2.cfg", veh2Pos, vehRot02, -60)
-            If IO.File.Exists(file & "vehicle_3.cfg") Then If ReadCfgValue("Active", file & "vehicle_3.cfg") = "False" AndAlso Not veh3.Exists Then LoadGarageVehicle3(file & "vehicle_3.cfg", veh3Pos, vehRot35, -60)
-            If IO.File.Exists(file & "vehicle_4.cfg") Then If ReadCfgValue("Active", file & "vehicle_4.cfg") = "False" AndAlso Not veh4.Exists Then LoadGarageVehicle4(file & "vehicle_4.cfg", veh4Pos, vehRot35, -60)
-            If IO.File.Exists(file & "vehicle_5.cfg") Then If ReadCfgValue("Active", file & "vehicle_5.cfg") = "False" AndAlso Not veh5.Exists Then LoadGarageVehicle5(file & "vehicle_5.cfg", veh5Pos, vehRot35, -60)
+            If IO.File.Exists(file & "vehicle_0.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_0.cfg") AndAlso Not veh0.Exists Then LoadGarageVehicle0(file & "vehicle_0.cfg", veh0Pos, vehRot02, -60)
+            If IO.File.Exists(file & "vehicle_1.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_1.cfg") AndAlso Not veh1.Exists Then LoadGarageVehicle1(file & "vehicle_1.cfg", veh1Pos, vehRot02, -60)
+            If IO.File.Exists(file & "vehicle_2.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_2.cfg") AndAlso Not veh2.Exists Then LoadGarageVehicle2(file & "vehicle_2.cfg", veh2Pos, vehRot02, -60)
+            If IO.File.Exists(file & "vehicle_3.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_3.cfg") AndAlso Not veh3.Exists Then LoadGarageVehicle3(file & "vehicle_3.cfg", veh3Pos, vehRot35, -60)
+            If IO.File.Exists(file & "vehicle_4.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_4.cfg") AndAlso Not veh4.Exists Then LoadGarageVehicle4(file & "vehicle_4.cfg", veh4Pos, vehRot35, -60)
+            If IO.File.Exists(file & "vehicle_5.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_5.cfg") AndAlso Not veh5.Exists Then LoadGarageVehicle5(file & "vehicle_5.cfg", veh5Pos, vehRot35, -60)
             veh0.MarkAsNoLongerNeeded()
             veh1.MarkAsNoLongerNeeded()
             veh2.MarkAsNoLongerNeeded()
@@ -226,13 +226,13 @@ Public Class SixCarGarage
         _Vehicle.PrimaryColor = ReadCfgValue("PrimaryColor", VehicleCfgFile)
         _Vehicle.SecondaryColor = ReadCfgValue("SecondaryColor", VehicleCfgFile)
         _Vehicle.PearlescentColor = ReadCfgValue("PearlescentColor", VehicleCfgFile)
-        If ReadCfgValue("HasCustomPrimaryColor", VehicleCfgFile) = "True" Then _Vehicle.CustomPrimaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomPrimaryColorRed", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorBlue", VehicleCfgFile))
-        If ReadCfgValue("HasCustomSecondaryColor", VehicleCfgFile) = "True" Then _Vehicle.CustomSecondaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomSecondaryColorRed", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorBlue", VehicleCfgFile))
+        If ReadCfgBool("HasCustomPrimaryColor", VehicleCfgFile) Then _Vehicle.CustomPrimaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomPrimaryColorRed", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorBlue", VehicleCfgFile))
+        If ReadCfgBool("HasCustomSecondaryColor", VehicleCfgFile) Then _Vehicle.CustomSecondaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomSecondaryColorRed", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorBlue", VehicleCfgFile))
         _Vehicle.RimColor = ReadCfgValue("RimColor", VehicleCfgFile)
-        If ReadCfgValue("HasNeonLightBack", VehicleCfgFile) = "True" Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Back, True)
-        If ReadCfgValue("HasNeonLightFront", VehicleCfgFile) = "True" Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Front, True)
-        If ReadCfgValue("HasNeonLightLeft", VehicleCfgFile) = "True" Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Left, True)
-        If ReadCfgValue("HasNeonLightRight", VehicleCfgFile) = "True" Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Right, True)
+        If ReadCfgBool("HasNeonLightBack", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Back, True)
+        If ReadCfgBool("HasNeonLightFront", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Front, True)
+        If ReadCfgBool("HasNeonLightLeft", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Left, True)
+        If ReadCfgBool("HasNeonLightRight", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Right, True)
         _Vehicle.NeonLightsColor = Drawing.Color.FromArgb(ReadCfgValue("NeonColorRed", VehicleCfgFile), ReadCfgValue("NeonColorGreen", VehicleCfgFile), ReadCfgValue("NeonColorBlue", VehicleCfgFile))
         _Vehicle.WheelType = ReadCfgValue("WheelType", VehicleCfgFile)
         _Vehicle.Livery = ReadCfgValue("Livery", VehicleCfgFile)
@@ -250,8 +250,8 @@ Public Class SixCarGarage
         _Vehicle.SetMod(VehicleMod.RightFender, ReadCfgValue("RightFender", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Roof, ReadCfgValue("Roof", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Exhaust, ReadCfgValue("Exhaust", VehicleCfgFile), True)
-        If ReadCfgValue("FrontTireVariation", VehicleCfgFile) = "True" Then _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), False)
-        If ReadCfgValue("BackTireVariation", VehicleCfgFile) = "True" Then _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), False)
+        If ReadCfgBool("FrontTireVariation", VehicleCfgFile) Then _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), False)
+        If ReadCfgBool("BackTireVariation", VehicleCfgFile) Then _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), False)
         _Vehicle.SetMod(VehicleMod.Suspension, ReadCfgValue("Suspension", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Engine, ReadCfgValue("Engine", VehicleCfgFile), False)
         _Vehicle.SetMod(VehicleMod.Brakes, ReadCfgValue("Brakes", VehicleCfgFile), True)
@@ -282,12 +282,12 @@ Public Class SixCarGarage
         _Vehicle.SetMod(47, ReadCfgValue("ForthySeven", VehicleCfgFile), True)
         _Vehicle.SetMod(48, ReadCfgValue("ForthyEight", VehicleCfgFile), True)
         _Vehicle.SetMod(50, ReadCfgValue("RoofTrim", VehicleCfgFile), True)
-        If ReadCfgValue("XenonHeadlights", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, True)
-        If ReadCfgValue("Turbo", VehicleCfgFile) = "True" Then _Vehicle.ToggleMod(VehicleToggleMod.Turbo, True)
+        If ReadCfgBool("XenonHeadlights", VehicleCfgFile) Then _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, True)
+        If ReadCfgBool("Turbo", VehicleCfgFile) Then _Vehicle.ToggleMod(VehicleToggleMod.Turbo, True)
         _Vehicle.ToggleMod(VehicleToggleMod.TireSmoke, True)
         _Vehicle.TireSmokeColor = Drawing.Color.FromArgb(ReadCfgValue("TyreSmokeColorRed", VehicleCfgFile), ReadCfgValue("TyreSmokeColorGreen", VehicleCfgFile), ReadCfgValue("TyreSmokeColorBlue", VehicleCfgFile))
         _Vehicle.SetMod(VehicleMod.Horns, ReadCfgValue("Horn", VehicleCfgFile), True)
-        If ReadCfgValue("BulletproofTyres", VehicleCfgFile) = "False" Then Native.Function.Call(Hash.SET_VEHICLE_TYRES_CAN_BURST, _Vehicle, False)
+        If Not ReadCfgBool("BulletproofTyres", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_TYRES_CAN_BURST, _Vehicle, False)
         'Added on v1.3.4
         'Fixed on v1.3.4.2
         If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
@@ -297,21 +297,21 @@ Public Class SixCarGarage
         _Vehicle.RoofState = CInt(ReadCfgValue("VehicleRoof", VehicleCfgFile))
         'Added on v1.3.3
         'Special case: The Hotknife's extras are both enabled when one is enabled, so if only the second is enabled we must apply the changes in reverse order
-        If _Vehicle.DisplayName = "HOTKNIFE" And ReadCfgValue("ExtraOne", VehicleCfgFile) <> "True" And ReadCfgValue("ExtraTwo", VehicleCfgFile) = "True" Then
+        If _Vehicle.DisplayName = "HOTKNIFE" And Not ReadCfgBool("ExtraOne", VehicleCfgFile) And ReadCfgBool("ExtraTwo", VehicleCfgFile) Then
             Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, 0)
             Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
         Else
-            If ReadCfgValue("ExtraOne", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
-            If ReadCfgValue("ExtraTwo", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, -1)
+            If ReadCfgBool("ExtraOne", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
+            If ReadCfgBool("ExtraTwo", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, -1)
         End If
 
-        If ReadCfgValue("ExtraThree", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, -1)
-        If ReadCfgValue("ExtraFour", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, -1)
-        If ReadCfgValue("ExtraFive", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, -1)
-        If ReadCfgValue("ExtraSix", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, -1)
-        If ReadCfgValue("ExtraSeven", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, -1)
-        If ReadCfgValue("ExtraEight", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, -1)
-        If ReadCfgValue("ExtraNine", VehicleCfgFile) = "True" Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, -1)
+        If ReadCfgBool("ExtraThree", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, -1)
+        If ReadCfgBool("ExtraFour", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, -1)
+        If ReadCfgBool("ExtraFive", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, -1)
+        If ReadCfgBool("ExtraSix", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, -1)
+        If ReadCfgBool("ExtraSeven", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, -1)
+        If ReadCfgBool("ExtraEight", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, -1)
+        If ReadCfgBool("ExtraNine", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, -1)
         If EngineRunning = True Then _Vehicle.EngineRunning = True
         'Make sure it is set to correct Engine
         _Vehicle.SetMod(VehicleMod.Engine, ReadCfgValue("Engine", VehicleCfgFile), False)

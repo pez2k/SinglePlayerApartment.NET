@@ -685,7 +685,7 @@ Public Class Mechanic
             MenuCategory.MenuItems.Clear()
             Dim item(10) As UIMenuItem
             If IO.File.Exists(PathDir & "vehicle_0.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_0.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_0.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_0.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_0.cfg")
                 Dim VehDispName As String
@@ -694,14 +694,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(0))
                 With item(0)
                     .SubString1 = PathDir & "vehicle_0.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_1.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_1.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_1.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_1.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_1.cfg")
                 Dim VehDispName As String
@@ -710,14 +710,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(1))
                 With item(1)
                     .SubString1 = PathDir & "vehicle_1.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_2.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_2.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_2.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_2.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_2.cfg")
                 Dim VehDispName As String
@@ -726,14 +726,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(2))
                 With item(2)
                     .SubString1 = PathDir & "vehicle_2.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_3.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_3.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_3.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_3.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_3.cfg")
                 Dim VehDispName As String
@@ -742,14 +742,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(3))
                 With item(3)
                     .SubString1 = PathDir & "vehicle_3.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_4.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_4.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_4.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_4.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_4.cfg")
                 Dim VehDispName As String
@@ -758,14 +758,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(4))
                 With item(4)
                     .SubString1 = PathDir & "vehicle_4.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_5.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_5.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_5.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_5.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_5.cfg")
                 Dim VehDispName As String
@@ -774,14 +774,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(5))
                 With item(5)
                     .SubString1 = PathDir & "vehicle_5.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_6.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_6.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_6.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_6.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_6.cfg")
                 Dim VehDispName As String
@@ -790,14 +790,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(6))
                 With item(6)
                     .SubString1 = PathDir & "vehicle_6.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_7.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_7.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_7.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_7.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_7.cfg")
                 Dim VehDispName As String
@@ -806,14 +806,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(7))
                 With item(7)
                     .SubString1 = PathDir & "vehicle_7.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_8.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_8.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_8.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_8.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_8.cfg")
                 Dim VehDispName As String
@@ -822,14 +822,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(8))
                 With item(8)
                     .SubString1 = PathDir & "vehicle_8.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_9.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_9.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_9.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_9.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_9.cfg")
                 Dim VehDispName As String
@@ -838,7 +838,7 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(9))
                 With item(9)
                     .SubString1 = PathDir & "vehicle_9.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -871,7 +871,7 @@ Public Class Mechanic
             MenuCategory.MenuItems.Clear()
             Dim item(10) As UIMenuItem
             If IO.File.Exists(PathDir & "vehicle_0.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_0.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_0.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_0.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_0.cfg")
                 Dim VehDispName As String
@@ -880,14 +880,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(0))
                 With item(0)
                     .SubString1 = PathDir & "vehicle_0.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_1.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_1.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_1.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_1.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_1.cfg")
                 Dim VehDispName As String
@@ -896,14 +896,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(1))
                 With item(1)
                     .SubString1 = PathDir & "vehicle_1.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_2.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_2.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_2.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_2.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_2.cfg")
                 Dim VehDispName As String
@@ -912,14 +912,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(2))
                 With item(2)
                     .SubString1 = PathDir & "vehicle_2.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_3.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_3.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_3.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_3.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_3.cfg")
                 Dim VehDispName As String
@@ -928,14 +928,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(3))
                 With item(3)
                     .SubString1 = PathDir & "vehicle_3.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_4.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_4.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_4.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_4.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_4.cfg")
                 Dim VehDispName As String
@@ -944,14 +944,14 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(4))
                 With item(4)
                     .SubString1 = PathDir & "vehicle_4.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
                 End With
             End If
             If IO.File.Exists(PathDir & "vehicle_5.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", PathDir & "vehicle_5.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", PathDir & "vehicle_5.cfg")
                 Dim VehName As String = ReadCfgValue("VehicleName", PathDir & "vehicle_5.cfg")
                 Dim VehNick As String = ReadCfgValue("VehicleNick", PathDir & "vehicle_5.cfg")
                 Dim VehDispName As String
@@ -960,7 +960,7 @@ Public Class Mechanic
                 MenuCategory.AddItem(item(5))
                 With item(5)
                     .SubString1 = PathDir & "vehicle_5.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -994,12 +994,12 @@ Public Class Mechanic
             GrgMoveMenu.MenuItems.Clear()
             If SixOrTen = "Ten" Then
                 If IO.File.Exists(file & "vehicle_0.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_0.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_0.cfg")
                     GrgMoveMenuItem(0) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_0.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_0.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(0))
                     With GrgMoveMenuItem(0)
                         .SubString1 = "vehicle_0.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1012,12 +1012,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_1.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_1.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_1.cfg")
                     GrgMoveMenuItem(1) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_1.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_1.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(1))
                     With GrgMoveMenuItem(1)
                         .SubString1 = "vehicle_1.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1030,12 +1030,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_2.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_2.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_2.cfg")
                     GrgMoveMenuItem(2) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_2.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_2.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(2))
                     With GrgMoveMenuItem(2)
                         .SubString1 = "vehicle_2.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1048,12 +1048,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_3.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_3.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_3.cfg")
                     GrgMoveMenuItem(3) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_3.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_3.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(3))
                     With GrgMoveMenuItem(3)
                         .SubString1 = "vehicle_3.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1066,12 +1066,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_4.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_4.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_4.cfg")
                     GrgMoveMenuItem(4) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_4.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_4.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(4))
                     With GrgMoveMenuItem(4)
                         .SubString1 = "vehicle_4.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1084,12 +1084,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_5.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_5.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_5.cfg")
                     GrgMoveMenuItem(5) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_5.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_5.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(5))
                     With GrgMoveMenuItem(5)
                         .SubString1 = "vehicle_5.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1102,12 +1102,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_6.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_6.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_6.cfg")
                     GrgMoveMenuItem(6) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_6.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_6.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(6))
                     With GrgMoveMenuItem(6)
                         .SubString1 = "vehicle_6.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1120,12 +1120,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_7.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_7.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_7.cfg")
                     GrgMoveMenuItem(7) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_7.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_7.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(7))
                     With GrgMoveMenuItem(7)
                         .SubString1 = "vehicle_7.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1138,12 +1138,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_8.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_8.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_8.cfg")
                     GrgMoveMenuItem(8) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_8.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_8.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(8))
                     With GrgMoveMenuItem(8)
                         .SubString1 = "vehicle_8.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1156,12 +1156,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_9.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_9.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_9.cfg")
                     GrgMoveMenuItem(9) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_9.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_9.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(9))
                     With GrgMoveMenuItem(9)
                         .SubString1 = "vehicle_9.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1175,12 +1175,12 @@ Public Class Mechanic
                 End If
             ElseIf SelectedGarage = "Six"
                 If IO.File.Exists(file & "vehicle_0.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_0.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_0.cfg")
                     GrgMoveMenuItem(0) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_0.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_0.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(0))
                     With GrgMoveMenuItem(0)
                         .SubString1 = "vehicle_0.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1193,12 +1193,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_1.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_1.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_1.cfg")
                     GrgMoveMenuItem(1) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_1.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_1.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(1))
                     With GrgMoveMenuItem(1)
                         .SubString1 = "vehicle_1.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1211,12 +1211,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_2.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_2.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_2.cfg")
                     GrgMoveMenuItem(2) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_2.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_2.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(2))
                     With GrgMoveMenuItem(2)
                         .SubString1 = "vehicle_2.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1229,12 +1229,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_3.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_3.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_3.cfg")
                     GrgMoveMenuItem(3) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_3.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_3.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(3))
                     With GrgMoveMenuItem(3)
                         .SubString1 = "vehicle_3.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1247,12 +1247,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_4.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_4.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_4.cfg")
                     GrgMoveMenuItem(4) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_4.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_4.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(4))
                     With GrgMoveMenuItem(4)
                         .SubString1 = "vehicle_4.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1265,12 +1265,12 @@ Public Class Mechanic
                     End With
                 End If
                 If IO.File.Exists(file & "vehicle_5.cfg") Then
-                    Dim Active As String = ReadCfgValue("Active", file & "vehicle_5.cfg")
+                    Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_5.cfg")
                     GrgMoveMenuItem(5) = New UIMenuItem(ReadCfgValue("VehicleName", file & "vehicle_5.cfg") & " (" & ReadCfgValue("PlateNumber", file & "vehicle_5.cfg") & ")", GrgSelectVeh)
                     GrgMoveMenu.AddItem(GrgMoveMenuItem(5))
                     With GrgMoveMenuItem(5)
                         .SubString1 = "vehicle_5.cfg"
-                        If Active = "True" Then
+                        If Active Then
                             .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                             .Enabled = False
                         End If
@@ -1343,7 +1343,7 @@ Public Class Mechanic
             _menuPool.Add(GarageMenu)
             GarageMenu.MenuItems.Clear()
             If IO.File.Exists(file & "vehicle_0.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_0.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_0.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_0.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(0) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_0.cfg") & ")", GrgSelectVeh)
@@ -1353,7 +1353,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(0))
                 With GarageMenuItem(0)
                     .SubString1 = "vehicle_0.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1367,7 +1367,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_1.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_1.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_1.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_1.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(1) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_1.cfg") & ")", GrgSelectVeh)
@@ -1377,7 +1377,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(1))
                 With GarageMenuItem(1)
                     .SubString1 = "vehicle_1.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1391,7 +1391,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_2.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_2.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_2.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_2.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(2) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_2.cfg") & ")", GrgSelectVeh)
@@ -1401,7 +1401,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(2))
                 With GarageMenuItem(2)
                     .SubString1 = "vehicle_2.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1415,7 +1415,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_3.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_3.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_3.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_3.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(3) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_3.cfg") & ")", GrgSelectVeh)
@@ -1425,7 +1425,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(3))
                 With GarageMenuItem(3)
                     .SubString1 = "vehicle_3.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1439,7 +1439,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_4.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_4.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_4.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_4.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(4) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_4.cfg") & ")", GrgSelectVeh)
@@ -1449,7 +1449,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(4))
                 With GarageMenuItem(4)
                     .SubString1 = "vehicle_4.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1463,7 +1463,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_5.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_5.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_5.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_5.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(5) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_5.cfg") & ")", GrgSelectVeh)
@@ -1473,7 +1473,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(5))
                 With GarageMenuItem(5)
                     .SubString1 = "vehicle_5.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1487,7 +1487,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_6.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_6.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_6.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_6.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(6) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_6.cfg") & ")", GrgSelectVeh)
@@ -1497,7 +1497,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(6))
                 With GarageMenuItem(6)
                     .SubString1 = "vehicle_6.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1511,7 +1511,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_7.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_7.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_7.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_7.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(7) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_7.cfg") & ")", GrgSelectVeh)
@@ -1521,7 +1521,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(7))
                 With GarageMenuItem(7)
                     .SubString1 = "vehicle_7.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1535,7 +1535,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_8.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_8.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_8.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_8.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(8) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_8.cfg") & ")", GrgSelectVeh)
@@ -1545,7 +1545,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(8))
                 With GarageMenuItem(8)
                     .SubString1 = "vehicle_8.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1559,7 +1559,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_9.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_9.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_9.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_9.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(9) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_9.cfg") & ")", GrgSelectVeh)
@@ -1569,7 +1569,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(9))
                 With GarageMenuItem(9)
                     .SubString1 = "vehicle_9.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1600,7 +1600,7 @@ Public Class Mechanic
             _menuPool.Add(GarageMenu)
             GarageMenu.MenuItems.Clear()
             If IO.File.Exists(file & "vehicle_0.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_0.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_0.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_0.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(0) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_0.cfg") & ")", GrgSelectVeh)
@@ -1610,7 +1610,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(0))
                 With GarageMenuItem(0)
                     .SubString1 = "vehicle_0.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1624,7 +1624,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_1.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_1.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_1.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_1.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(1) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_1.cfg") & ")", GrgSelectVeh)
@@ -1634,7 +1634,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(1))
                 With GarageMenuItem(1)
                     .SubString1 = "vehicle_1.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1648,7 +1648,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_2.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_2.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_2.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_2.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(2) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_2.cfg") & ")", GrgSelectVeh)
@@ -1658,7 +1658,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(2))
                 With GarageMenuItem(2)
                     .SubString1 = "vehicle_2.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1672,7 +1672,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_3.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_3.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_3.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_3.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(3) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_3.cfg") & ")", GrgSelectVeh)
@@ -1682,7 +1682,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(3))
                 With GarageMenuItem(3)
                     .SubString1 = "vehicle_3.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1696,7 +1696,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_4.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_4.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_4.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_4.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(4) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_4.cfg") & ")", GrgSelectVeh)
@@ -1706,7 +1706,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(4))
                 With GarageMenuItem(4)
                     .SubString1 = "vehicle_4.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1720,7 +1720,7 @@ Public Class Mechanic
                 End With
             End If
             If IO.File.Exists(file & "vehicle_5.cfg") Then
-                Dim Active As String = ReadCfgValue("Active", file & "vehicle_5.cfg")
+                Dim Active As Boolean = ReadCfgBool("Active", file & "vehicle_5.cfg")
                 Dim Nick As String = ReadCfgValue("VehicleNick", file & "vehicle_5.cfg")
                 If Nick <> "" Then
                     GarageMenuItem(5) = New UIMenuItem(Nick & " (" & ReadCfgValue("PlateNumber", file & "vehicle_5.cfg") & ")", GrgSelectVeh)
@@ -1730,7 +1730,7 @@ Public Class Mechanic
                 GarageMenu.AddItem(GarageMenuItem(5))
                 With GarageMenuItem(5)
                     .SubString1 = "vehicle_5.cfg"
-                    If Active = "True" Then
+                    If Active Then
                         .SetRightBadge(UIMenuItem.BadgeStyle.Car)
                         .Enabled = False
                     End If
@@ -1758,16 +1758,16 @@ Public Class Mechanic
                 Mechanic2.ReturnVeh(selectedItem.SubString1)
             ElseIf Not selectedItem.RightBadge = UIMenuItem.BadgeStyle.Car AndAlso Not selectedItem.Text = ReturnVeh Then
                 Dim VehicleModel As String = ReadCfgValue("VehicleModel", selectedItem.SubString1)
-                Dim Active As String = ReadCfgValue("Active", selectedItem.SubString1)
+                Dim Active As Boolean = ReadCfgBool("Active", selectedItem.SubString1)
                 Dim VehicleHash As Integer = ReadCfgValue("VehicleHash", selectedItem.SubString1)
 
-                If playerName = "Michael" AndAlso Active = "False" Then
+                If playerName = "Michael" AndAlso Not Active Then
                     Mechanic2.Michael_SendVehicle(selectedItem.SubString1, VehicleModel, VehicleHash, selectedItem, sender)
-                ElseIf playerName = "Franklin" AndAlso Active = "False" Then
+                ElseIf playerName = "Franklin" AndAlso Not Active Then
                     Mechanic2.Franklin_SendVehicle(selectedItem.SubString1, VehicleModel, VehicleHash, selectedItem, sender)
-                ElseIf playerName = “Trevor" AndAlso Active = "False" Then
+                ElseIf playerName = “Trevor" AndAlso Not Active Then
                     Mechanic2.Trevor_SendVehicle(selectedItem.SubString1, VehicleModel, VehicleHash, selectedItem, sender)
-                ElseIf playerName = "Player3" AndAlso Active = "False" Then
+                ElseIf playerName = "Player3" AndAlso Not Active Then
                     Mechanic2.Player3_SendVehicle(selectedItem.SubString1, VehicleModel, VehicleHash, selectedItem, sender)
                 End If
             End If
