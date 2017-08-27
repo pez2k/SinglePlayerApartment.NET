@@ -356,8 +356,8 @@ Public Class Resources
                     Result = "Garage"
             End Select
 
-            ' The Guardian is a special case
-            If Vehicle.FriendlyName = "Guardian" Then
+            ' The Guardian, APC and Half-Track are special cases
+            If Vehicle.GetHashCode() = VehicleHash.Guardian Or Vehicle.GetHashCode() = VehicleHash.APC Or Vehicle.GetHashCode() = VehicleHash.HalfTrack Then
                 Result = "Garage"
             End If
         Catch ex As Exception
