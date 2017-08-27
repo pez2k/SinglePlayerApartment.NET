@@ -694,47 +694,49 @@ Public Class Brain
         Try
             Dim nearbyProps As Prop() = World.GetNearbyProps(Game.Player.Character.Position, 3.0)
             For i As Integer = 0 To nearbyProps.Length - 1
-                If ((((TVOn = False) AndAlso Not playerPed.IsInVehicle) AndAlso (TVModels.Contains(nearbyProps(i).Model) AndAlso (playerPed.Position.DistanceTo(nearbyProps(i).Position) <= 2.0)))) Then
-                    DisplayHelpTextThisFrame(_TVOn)
-                    If Game.IsControlJustPressed(0, GTA.Control.Context) Then
-                        TV = nearbyProps(i)
-                        Native.Function.Call(Hash.ATTACH_TV_AUDIO_TO_ENTITY, TV)
-                        If Not Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_REGISTERED, "tvscreen") Then
-                            Native.Function.Call(Hash.REGISTER_NAMED_RENDERTARGET, "tvscreen", False)
+                If Not playerPed.IsInVehicle AndAlso TVModels.Contains(nearbyProps(i).Model) AndAlso playerPed.Position.DistanceTo(nearbyProps(i).Position) <= 2.0 Then
+                    If Not TVOn Then
+                        DisplayHelpTextThisFrame(_TVOn)
+                        If Game.IsControlJustPressed(0, GTA.Control.Context) Then
+                            TV = nearbyProps(i)
+                            Native.Function.Call(Hash.ATTACH_TV_AUDIO_TO_ENTITY, TV)
+                            If Not Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_REGISTERED, "tvscreen") Then
+                                Native.Function.Call(Hash.REGISTER_NAMED_RENDERTARGET, "tvscreen", False)
+                            End If
+                            If Not Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_LINKED, TV.Model) Then
+                                Native.Function.Call(Hash.LINK_NAMED_RENDERTARGET, TV.Model)
+                                rendertargetid = Native.Function.Call(Of Integer)(Hash.GET_NAMED_RENDERTARGET_RENDER_ID, "tvscreen")
+                            End If
+                            Dim r As Random = New Random()
+                            TV_Channel = r.Next(2)
+                            Native.Function.Call(Hash.SET_TV_CHANNEL, TV_Channel)
+                            Native.Function.Call(Hash.SET_TV_VOLUME, TV_Volume)
+                            TVOn = True
                         End If
-                        If Not Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_LINKED, TV.Model) Then
-                            Native.Function.Call(Hash.LINK_NAMED_RENDERTARGET, TV.Model)
-                            rendertargetid = Native.Function.Call(Of Integer)(Hash.GET_NAMED_RENDERTARGET_RENDER_ID, "tvscreen")
+                    Else
+                        DisplayHelpTextThisFrame(_TVChannel)
+                        If Game.IsControlJustPressed(0, GTA.Control.Context) Then
+                            Wait(1000)
+                            If Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_REGISTERED, "tvscreen") Then
+                                Native.Function.Call(Hash.RELEASE_NAMED_RENDERTARGET, "tvscreen")
+                            End If
+                            TVOn = False
+                        ElseIf Game.IsControlJustPressed(0, GTA.Control.VehicleRadioWheel) Then
+                            Select Case TV_Channel
+                                Case 0
+                                    TV_Channel = 1
+                                Case 1
+                                    TV_Channel = 0
+                            End Select
+                            Native.Function.Call(Hash.SET_TV_CHANNEL, TV_Channel)
+                            TVOn = True
+                        ElseIf Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso Not SubtitleOn Then
+                            Native.Function.Call(Hash.ENABLE_MOVIE_SUBTITLES, True)
+                            SubtitleOn = True
+                        ElseIf Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso SubtitleOn Then
+                            Native.Function.Call(Hash.ENABLE_MOVIE_SUBTITLES, False)
+                            SubtitleOn = False
                         End If
-                        Dim r As Random = New Random()
-                        TV_Channel = r.Next(2)
-                        Native.Function.Call(Hash.SET_TV_CHANNEL, TV_Channel)
-                        Native.Function.Call(Hash.SET_TV_VOLUME, TV_Volume)
-                        TVOn = True
-                    End If
-                ElseIf ((((TVOn = True) AndAlso Not playerPed.IsInVehicle) AndAlso (TVModels.Contains(nearbyProps(i).Model) AndAlso (playerPed.Position.DistanceTo(nearbyProps(i).Position) <= 2.0)))) Then
-                    DisplayHelpTextThisFrame(_TVChannel)
-                    If Game.IsControlJustPressed(0, GTA.Control.Context) Then
-                        Wait(1000)
-                        If Native.Function.Call(Of Boolean)(Hash.IS_NAMED_RENDERTARGET_REGISTERED, "tvscreen") Then
-                            Native.Function.Call(Hash.RELEASE_NAMED_RENDERTARGET, "tvscreen")
-                        End If
-                        TVOn = False
-                    ElseIf Game.IsControlJustPressed(0, GTA.Control.VehicleRadioWheel) Then
-                        Select Case TV_Channel
-                            Case 0
-                                TV_Channel = 1
-                            Case 1
-                                TV_Channel = 0
-                        End Select
-                        Native.Function.Call(Hash.SET_TV_CHANNEL, TV_Channel)
-                        TVOn = True
-                    ElseIf Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso SubtitleOn = False Then
-                        Native.Function.Call(Hash.ENABLE_MOVIE_SUBTITLES, True)
-                        SubtitleOn = True
-                    ElseIf Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso SubtitleOn = True Then
-                        Native.Function.Call(Hash.ENABLE_MOVIE_SUBTITLES, False)
-                        SubtitleOn = False
                     End If
                 End If
             Next i

@@ -73,7 +73,7 @@ Public Class Website
         ReadWarstock()
         CreateDeliveryMenu()
 
-        If Now.Month = 12 Then merryChristmas = True
+        merryChristmas = (Now.Month = 12)
     End Sub
 
     Public Shared Sub ReadWarstock()
@@ -461,7 +461,7 @@ Public Class Website
     Public Shared Sub VehicleMenuCloseHandler(sender As UIMenu)
         Try
             image = ""
-            If Not DeliveryMenu.Visible = True Then
+            If Not DeliveryMenu.Visible Then
                 If Not VehPreview = Nothing Then VehPreview.Delete()
             End If
         Catch ex As Exception

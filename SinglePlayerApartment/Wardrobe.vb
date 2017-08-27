@@ -1474,18 +1474,13 @@ Public Class Wardrobe
     Public Sub OnTick(o As Object, e As EventArgs)
         WardrobeDistance = World.GetDistance(playerPed.Position, WardrobeVector)
 
-        If DrawSpotLight = True Then
+        If DrawSpotLight Then
             World.DrawSpotLightWithShadow(playerPed.Position + Vector3.WorldUp * 2 + Vector3.WorldNorth * 2, Vector3.WorldSouth + Vector3.WorldDown, Color.White, 10, 30, 100, 50, -1)
         End If
 
         'Control
-        If Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso WardrobeDistance < 2.0 AndAlso (Player0W.Visible = True Or Player1W.Visible = True Or Player2W.Visible = True Or Player3_MW.Visible = True Or Player3_FW.Visible = True) Then
-            If DrawSpotLight = False Then
-                DrawSpotLight = True
-            Else
-                DrawSpotLight = False
-            End If
-
+        If Game.IsControlJustPressed(0, GTA.Control.Jump) AndAlso WardrobeDistance < 2.0 AndAlso (Player0W.Visible Or Player1W.Visible Or Player2W.Visible Or Player3_MW.Visible Or Player3_FW.Visible) Then
+            DrawSpotLight = Not DrawSpotLight
         End If
         'End Control
 

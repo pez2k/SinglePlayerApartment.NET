@@ -292,7 +292,7 @@ Public Class Resources
 
     Public Shared Function GetVehicleInteriorTrimColor2(Vehicle As Vehicle) As Integer
         Dim arg As New OutputArgument()
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Native.Function.Call(&H7D1464D472D32136L, Vehicle.Handle, arg)
         Else
             Return 0
@@ -302,7 +302,7 @@ Public Class Resources
 
     Public Shared Function GetVehicleInteriorDashboardColor2(Vehicle As Vehicle) As Integer
         Dim arg As New OutputArgument()
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Native.Function.Call(&HB7635E80A5C31BFFUL, Vehicle.Handle, arg)
         Else
             Return 0
@@ -312,7 +312,7 @@ Public Class Resources
 
     Public Shared Function GetVehicleInteriorTrimColor(Vehicle As Vehicle) As Integer
         Dim arg As New OutputArgument()
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Native.Function.Call(&H7D1464D472D32136L, Vehicle.Handle, arg)
         Else
             Return 0
@@ -322,7 +322,7 @@ Public Class Resources
 
     Public Shared Function GetVehicleInteriorDashboardColor(Vehicle As Vehicle) As Integer
         Dim arg As New OutputArgument()
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Native.Function.Call(&HB7635E80A5C31BFFUL, Vehicle.Handle, arg)
         Else
             Return 0
@@ -331,7 +331,7 @@ Public Class Resources
     End Function
 
     Public Shared Function GetVehicleLivery2(Vehicle As Vehicle) As Integer
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Return Native.Function.Call(Of Integer)(&H60190048C0764A26UL, Vehicle.Handle)
         Else
             Return 0
@@ -339,7 +339,7 @@ Public Class Resources
     End Function
 
     Public Shared Sub SetVehicleLivery2(Vehicle As Vehicle, LiveryNumber As Integer)
-        If My.Settings.HasLowriderUpdate = True Then
+        If My.Settings.HasLowriderUpdate Then
             Native.Function.Call(&HA6D3A8750DC73270UL, Vehicle.Handle, LiveryNumber)
         End If
     End Sub

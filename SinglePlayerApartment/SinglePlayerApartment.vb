@@ -123,7 +123,7 @@ Public Class SinglePlayerApartment
             AddHandler Tick, AddressOf OnTick
 
             LoadSettingFromCFG()
-            If My.Settings.AlwaysEnableMPMaps = True Then LoadMPDLCMap()
+            If My.Settings.AlwaysEnableMPMaps Then LoadMPDLCMap()
             If Not Apartment.GetInteriorID(New Vector3(263.86999, -998.78002, -99.010002)) = 0 Then InteriorIDList.Add(Apartment.GetInteriorID(New Vector3(263.86999, -998.78002, -99.010002)))
             If Not Apartment.GetInteriorID(New Vector3(343.85, -999.08, -99.198)) = 0 Then InteriorIDList.Add(Apartment.GetInteriorID(New Vector3(343.85, -999.08, -99.198)))
         Catch ex As Exception
@@ -432,24 +432,9 @@ Public Class SinglePlayerApartment
             My.Settings.TlastPosX = Convert.ToSingle(ReadCfgValue("TlastPosX", saveFile))
             My.Settings.TlastPosY = Convert.ToSingle(ReadCfgValue("TlastPosY", saveFile))
             My.Settings.TlastPosZ = Convert.ToSingle(ReadCfgValue("TlastPosZ", saveFile))
-            Dim AlwaysEnableMPMaps As Boolean = ReadCfgBool("AlwaysEnableMPMaps", settingFile)
-            If AlwaysEnableMPMaps Then
-                My.Settings.AlwaysEnableMPMaps = True
-            Else
-                My.Settings.AlwaysEnableMPMaps = False
-            End If
-            Dim HasLowriderUpdate As Integer = Game.Version
-            If HasLowriderUpdate < 13 Then
-                My.Settings.HasLowriderUpdate = False
-            Else
-                My.Settings.HasLowriderUpdate = True
-            End If
-            Dim NeverEnableMPMaps As Boolean = ReadCfgBool("NeverEnableMPMaps", settingFile)
-            If NeverEnableMPMaps Then
-                My.Settings.NeverEnableMPMaps = True
-            Else
-                My.Settings.NeverEnableMPMaps = False
-            End If
+            My.Settings.AlwaysEnableMPMaps = ReadCfgBool("AlwaysEnableMPMaps", settingFile)
+            My.Settings.HasLowriderUpdate = (Game.Version >= 13)
+            My.Settings.NeverEnableMPMaps = ReadCfgBool("NeverEnableMPMaps", settingFile)
             My.Settings.VehicleSpawn = ReadCfgValue("VehicleSpawn", settingFile)
             My.Settings.Volume = ReadCfgValue("Volume", settingFile)
             My.Settings.PreviewPointX = ReadCfgValue("PointX", settingFile)

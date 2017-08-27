@@ -324,10 +324,10 @@ Public Class TenCarGarage
         If ReadCfgBool("HasCustomPrimaryColor", VehicleCfgFile) Then _Vehicle.CustomPrimaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomPrimaryColorRed", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomPrimaryColorBlue", VehicleCfgFile))
         If ReadCfgBool("HasCustomSecondaryColor", VehicleCfgFile) Then _Vehicle.CustomSecondaryColor = Drawing.Color.FromArgb(ReadCfgValue("CustomSecondaryColorRed", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorGreen", VehicleCfgFile), ReadCfgValue("CustomSecondaryColorBlue", VehicleCfgFile))
         _Vehicle.RimColor = ReadCfgValue("RimColor", VehicleCfgFile)
-        If ReadCfgBool("HasNeonLightBack", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Back, True)
-        If ReadCfgBool("HasNeonLightFront", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Front, True)
-        If ReadCfgBool("HasNeonLightLeft", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Left, True)
-        If ReadCfgBool("HasNeonLightRight", VehicleCfgFile) Then _Vehicle.SetNeonLightsOn(VehicleNeonLight.Right, True)
+        _Vehicle.SetNeonLightsOn(VehicleNeonLight.Back, ReadCfgBool("HasNeonLightBack", VehicleCfgFile))
+        _Vehicle.SetNeonLightsOn(VehicleNeonLight.Front, ReadCfgBool("HasNeonLightFront", VehicleCfgFile))
+        _Vehicle.SetNeonLightsOn(VehicleNeonLight.Left, ReadCfgBool("HasNeonLightLeft", VehicleCfgFile))
+        _Vehicle.SetNeonLightsOn(VehicleNeonLight.Right, ReadCfgBool("HasNeonLightRight", VehicleCfgFile))
         _Vehicle.NeonLightsColor = Drawing.Color.FromArgb(ReadCfgValue("NeonColorRed", VehicleCfgFile), ReadCfgValue("NeonColorGreen", VehicleCfgFile), ReadCfgValue("NeonColorBlue", VehicleCfgFile))
         _Vehicle.WheelType = ReadCfgValue("WheelType", VehicleCfgFile)
         _Vehicle.Livery = ReadCfgValue("Livery", VehicleCfgFile)
@@ -345,8 +345,8 @@ Public Class TenCarGarage
         _Vehicle.SetMod(VehicleMod.RightFender, ReadCfgValue("RightFender", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Roof, ReadCfgValue("Roof", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Exhaust, ReadCfgValue("Exhaust", VehicleCfgFile), True)
-        If ReadCfgBool("FrontTireVariation", VehicleCfgFile) Then _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), False)
-        If ReadCfgBool("BackTireVariation", VehicleCfgFile) Then _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), True) Else _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), False)
+        _Vehicle.SetMod(VehicleMod.FrontWheels, ReadCfgValue("FrontWheels", VehicleCfgFile), ReadCfgBool("FrontTireVariation", VehicleCfgFile))
+        _Vehicle.SetMod(VehicleMod.BackWheels, ReadCfgValue("BackWheels", VehicleCfgFile), ReadCfgBool("BackTireVariation", VehicleCfgFile))
         _Vehicle.SetMod(VehicleMod.Suspension, ReadCfgValue("Suspension", VehicleCfgFile), True)
         _Vehicle.SetMod(VehicleMod.Engine, ReadCfgValue("Engine", VehicleCfgFile), False)
         _Vehicle.SetMod(VehicleMod.Brakes, ReadCfgValue("Brakes", VehicleCfgFile), True)
@@ -377,18 +377,18 @@ Public Class TenCarGarage
         _Vehicle.SetMod(47, ReadCfgValue("ForthySeven", VehicleCfgFile), True)
         _Vehicle.SetMod(48, ReadCfgValue("ForthyEight", VehicleCfgFile), True)
         _Vehicle.SetMod(50, ReadCfgValue("RoofTrim", VehicleCfgFile), True)
-        If ReadCfgBool("XenonHeadlights", VehicleCfgFile) Then _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, True)
-        If ReadCfgBool("Turbo", VehicleCfgFile) Then _Vehicle.ToggleMod(VehicleToggleMod.Turbo, True)
+        _Vehicle.ToggleMod(VehicleToggleMod.XenonHeadlights, ReadCfgBool("XenonHeadlights", VehicleCfgFile))
+        _Vehicle.ToggleMod(VehicleToggleMod.Turbo, ReadCfgBool("Turbo", VehicleCfgFile))
         _Vehicle.ToggleMod(VehicleToggleMod.TireSmoke, True)
         _Vehicle.TireSmokeColor = Drawing.Color.FromArgb(ReadCfgValue("TyreSmokeColorRed", VehicleCfgFile), ReadCfgValue("TyreSmokeColorGreen", VehicleCfgFile), ReadCfgValue("TyreSmokeColorBlue", VehicleCfgFile))
         _Vehicle.SetMod(VehicleMod.Horns, ReadCfgValue("Horn", VehicleCfgFile), True)
-        If Not ReadCfgBool("BulletproofTyres", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_TYRES_CAN_BURST, _Vehicle, False)
+        Native.Function.Call(Hash.SET_VEHICLE_TYRES_CAN_BURST, _Vehicle, Not ReadCfgBool("BulletproofTyres", VehicleCfgFile))
         'Added on v1.3.4
         'Fixed on v1.3.4.2
-        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
-        If My.Settings.HasLowriderUpdate = True Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.Handle, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
+        If My.Settings.HasLowriderUpdate Then Native.Function.Call(&H6089CDF6A57F326C, _Vehicle.Handle, CInt(ReadCfgValue("DashboardColor", VehicleCfgFile)))
+        If My.Settings.HasLowriderUpdate Then Native.Function.Call(&HF40DD601A65F7F19UL, _Vehicle.Handle, CInt(ReadCfgValue("TrimColor", VehicleCfgFile)))
         'End of Added on v1.3.4
-        If My.Settings.HasLowriderUpdate = True Then SetVehicleLivery2(_Vehicle, ReadCfgValue("Livery2", VehicleCfgFile))
+        If My.Settings.HasLowriderUpdate Then SetVehicleLivery2(_Vehicle, ReadCfgValue("Livery2", VehicleCfgFile))
         _Vehicle.RoofState = CInt(ReadCfgValue("VehicleRoof", VehicleCfgFile))
         'Added on v1.3.3
         'Special case: The Hotknife's extras are both enabled when one is enabled, so if only the second is enabled we must apply the changes in reverse order
@@ -396,18 +396,18 @@ Public Class TenCarGarage
             Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, 0)
             Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
         Else
-            If ReadCfgBool("ExtraOne", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, -1)
-            If ReadCfgBool("ExtraTwo", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, -1)
+            Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 1, If(ReadCfgBool("ExtraOne", VehicleCfgFile), 0, -1))
+            Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 2, If(ReadCfgBool("ExtraTwo", VehicleCfgFile), 0, -1))
         End If
 
-        If ReadCfgBool("ExtraThree", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, -1)
-        If ReadCfgBool("ExtraFour", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, -1)
-        If ReadCfgBool("ExtraFive", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, -1)
-        If ReadCfgBool("ExtraSix", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, -1)
-        If ReadCfgBool("ExtraSeven", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, -1)
-        If ReadCfgBool("ExtraEight", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, -1)
-        If ReadCfgBool("ExtraNine", VehicleCfgFile) Then Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, 0) Else Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, -1)
-        If EngineRunning = True Then _Vehicle.EngineRunning = True
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 3, If(ReadCfgBool("ExtraThree", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 4, If(ReadCfgBool("ExtraFour", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 5, If(ReadCfgBool("ExtraFive", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 6, If(ReadCfgBool("ExtraSix", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 7, If(ReadCfgBool("ExtraSeven", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 8, If(ReadCfgBool("ExtraEight", VehicleCfgFile), 0, -1))
+        Native.Function.Call(Hash.SET_VEHICLE_EXTRA, _Vehicle, 9, If(ReadCfgBool("ExtraNine", VehicleCfgFile), 0, -1))
+        If EngineRunning Then _Vehicle.EngineRunning = True
         'Make sure it is set to correct Engine
         _Vehicle.SetMod(VehicleMod.Engine, ReadCfgValue("Engine", VehicleCfgFile), False)
     End Sub
@@ -778,7 +778,7 @@ Public Class TenCarGarage
 
             If InteriorID = playerInterior Then
                 World.DrawMarker(MarkerType.VerticalCylinder, MenuActivator, Vector3.Zero, Vector3.Zero, New Vector3(1.0, 1.0, 1.0), Drawing.Color.LightBlue)
-                If My.Settings.RefreshGrgVehs = True Then RefreshGarageVehicles(CurrentPath)
+                If My.Settings.RefreshGrgVehs Then RefreshGarageVehicles(CurrentPath)
             Else
                 If Not Game.Player.Character.IsInVehicle Then
                     If Not veh0 = Nothing Then veh0.Delete()
@@ -815,7 +815,7 @@ Public Class TenCarGarage
     Public Sub ControlsKeyDown()
         On Error Resume Next
 
-        If playerPed.IsInVehicle AndAlso playerPed.CurrentVehicle.Speed > 1.5 AndAlso InteriorID = playerInterior AndAlso IsInGarageVehicle(playerPed) = True Then 'GarageMiddleDistance < 20.0
+        If playerPed.IsInVehicle AndAlso playerPed.CurrentVehicle.Speed > 1.5 AndAlso InteriorID = playerInterior AndAlso IsInGarageVehicle(playerPed) Then 'GarageMiddleDistance < 20.0
             Dim PPCV As Integer = -1
             If playerPed.CurrentVehicle = veh0 Then
                 WriteCfgValue("Active", "True", CurrentPath & "vehicle_0.cfg")

@@ -1956,7 +1956,7 @@ Public Class Mechanic
             MoveMenuSelectedIndex = index
 
             If selectedItem.Text <> GarageMenuSelectedItem Then
-                If IO.File.Exists(Path & GarageMenuSelectedFile) = True AndAlso IO.File.Exists(Path & MoveMenuSelectedFile) = True Then
+                If IO.File.Exists(Path & GarageMenuSelectedFile) AndAlso IO.File.Exists(Path & MoveMenuSelectedFile) Then
                     IO.File.Move(Path & GarageMenuSelectedFile, Path & "vehicle.cfg")
                     IO.File.Move(Path & MoveMenuSelectedFile, Path & GarageMenuSelectedFile)
                     IO.File.Move(Path & "vehicle.cfg", Path & MoveMenuSelectedFile)
@@ -2604,7 +2604,7 @@ Public Class Mechanic
                     CreatePPegasusMenu()
                     Player3PegasusMenu.Visible = True
             End Select
-            If PlaySound = True Then
+            If PlaySound Then
                 Dim r As Random = New Random
                 Dim rd As Integer = r.Next(1, 5)
                 Select Case rd
