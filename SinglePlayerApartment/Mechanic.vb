@@ -2583,7 +2583,7 @@ Public Class Mechanic
         itemWO3655 = New UIMenuItem(WildOats3655.Apartment.Name & WildOats3655.Apartment.Unit)
         itemNC2045 = New UIMenuItem(NorthConker2045.Apartment.Name & NorthConker2045.Apartment.Unit)
         itemMR2117 = New UIMenuItem(MiltonRd2117.Apartment.Name & MiltonRd2117.Apartment.Unit)
-        itemHA2874 = New UIMenuItem(HillcrestAve2874._Apartment.Name & HillcrestAve2874._Apartment.Unit)
+        itemHA2874 = New UIMenuItem(HillcrestAve2874.Apartment.Name & HillcrestAve2874.Apartment.Unit)
         itemWD3677 = New UIMenuItem(Whispymound3677.Apartment.Name & Whispymound3677.Apartment.Unit)
         itemMW2113 = New UIMenuItem(MadWayne2113.Apartment.Name & MadWayne2113.Apartment.Unit)
         itemETP1 = New UIMenuItem(EclipseTower.ApartmentPS1.Name & EclipseTower.ApartmentPS1.Unit)

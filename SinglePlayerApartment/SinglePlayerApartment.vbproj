@@ -139,6 +139,7 @@
     <Compile Include="Medium End Apartments\ProcopioDr4401.vb" />
     <Compile Include="Medium End Apartments\ProcopioDr4584.vb" />
     <Compile Include="Medium End Apartments\SustanciaRd.vb" />
+    <Compile Include="Stilt Apartments\StiltApartment.vb" />
     <Compile Include="Website.vb" />
     <Compile Include="SinglePlayerApartment.vb" />
     <Compile Include="SixCarGarage.vb" />

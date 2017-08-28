@@ -611,10 +611,10 @@ Public Class SinglePlayerApartment
                     MiltonRd2117.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09c_ext3")
                 Case "HillcrestA2874"
-                    SetInteriorActive2(HillcrestAve2874._Apartment.Interior.X, HillcrestAve2874._Apartment.Interior.Y, HillcrestAve2874._Apartment.Interior.Z)
+                    SetInteriorActive2(HillcrestAve2874.Apartment.Interior.X, HillcrestAve2874.Apartment.Interior.Y, HillcrestAve2874.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    HillcrestAve2874._Apartment.IsAtHome = True
+                    HillcrestAve2874.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09b_ext2")
                 Case "Whispy3677"
                     SetInteriorActive2(Whispymound3677.Apartment.Interior.X, Whispymound3677.Apartment.Interior.Y, Whispymound3677.Apartment.Interior.Z)
