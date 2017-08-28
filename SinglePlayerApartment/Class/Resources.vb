@@ -630,16 +630,19 @@ Label_005C:
     End Function
 
     Public Shared Function IsInGarageVehicle(PlayerPed As Ped) As Boolean
-        Dim Result As Boolean
-        Select Case PlayerPed.CurrentVehicle
-            Case TenCarGarage.vehicleList(0), TenCarGarage.vehicleList(1), TenCarGarage.vehicleList(2), TenCarGarage.vehicleList(3), TenCarGarage.vehicleList(4), TenCarGarage.vehicleList(5), TenCarGarage.vehicleList(6), TenCarGarage.vehicleList(7), TenCarGarage.vehicleList(8), TenCarGarage.vehicleList(9)
-                Result = True
-            Case SixCarGarage.vehicleList(0), SixCarGarage.vehicleList(1), SixCarGarage.vehicleList(2), SixCarGarage.vehicleList(3), SixCarGarage.vehicleList(4), SixCarGarage.vehicleList(5)
-                Result = True
-            Case Else
-                Result = False
-        End Select
-        Return Result
+        For Each v In TenCarGarage.vehicleList
+            If PlayerPed.CurrentVehicle = v Then
+                Return True
+            End If
+        Next
+
+        For Each v In SixCarGarage.vehicleList
+            If PlayerPed.CurrentVehicle = v Then
+                Return True
+            End If
+        Next
+
+        Return False
     End Function
 
     Public Shared Sub ptfx_triggerOnEntity(ByVal ent As Entity, ByVal sPTFX As String, ByVal sAsset As String, ByVal Optional offset As Vector3 = Nothing, ByVal Optional rot As Vector3 = Nothing, ByVal Optional size As Double = 1)
