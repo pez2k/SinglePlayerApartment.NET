@@ -16,6 +16,7 @@ Public Class StiltApartment
     Public SettingName As String
     Public XmasTreeLocation As Vector3
     Public HideMapObjects() As String
+    Public Enabled As Boolean
 
     Public Sub Init()
         Try
@@ -26,7 +27,9 @@ Public Class StiltApartment
             Apartment.InteriorID = Apartment.GetInteriorID(Apartment.TeleportInside)
             If Not Apartment.InteriorID = 0 Then InteriorIDList.Add(Apartment.InteriorID)
 
-            If ReadCfgValue(SettingName, settingFile) = "Enable" Then
+            Enabled = (ReadCfgValue(SettingName, settingFile) = "Enable")
+
+            If Enabled Then
                 Garage = ReadCfgValue("Garage", langFile)
                 AptOptions = ReadCfgValue("AptOptions", langFile)
                 ExitApt = ReadCfgValue("ExitApt", langFile)
@@ -497,7 +500,7 @@ Public Class StiltApartment
 
     Public Sub OnTick()
         Try
-            If ReadCfgValue(SettingName, settingFile) = "Enable" Then
+            If Enabled Then
                 'Enter Apartment
                 If (Not BuyMenu.Visible AndAlso Not playerPed.IsInVehicle AndAlso Not playerPed.IsDead) AndAlso Apartment.EntranceDistance < 3.0 Then
                     DisplayHelpTextThisFrame(EnterApartment & Apartment.Name)
