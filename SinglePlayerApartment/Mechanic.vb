@@ -2576,7 +2576,7 @@ Public Class Mechanic
         itemTT = New UIMenuItem(TinselTower.Apartment.Name & TinselTower.Apartment.Unit)
         itemTTHL = New UIMenuItem(TinselTower.ApartmentHL.Name & TinselTower.ApartmentHL.Unit)
         itemWP = New UIMenuItem(WeazelPlaza.Apartment.Name & WeazelPlaza.Apartment.Unit)
-        itemVB = New UIMenuItem(VespucciBlvd.Apartment.Name & VespucciBlvd.Apartment.Unit)
+        itemVB = New UIMenuItem(ApartmentsHandler.VespucciBlvd.GetNameAndUnit())
         itemNC2044 = New UIMenuItem(ApartmentsHandler.NorthConker2044.GetNameAndUnit())
         itemHA2862 = New UIMenuItem(ApartmentsHandler.HillcrestAve2862.GetNameAndUnit())
         itemHA2868 = New UIMenuItem(ApartmentsHandler.HillcrestAve2868.GetNameAndUnit())
@@ -2606,10 +2606,10 @@ Public Class Mechanic
         itemSA = New UIMenuItem(SpanishAve.Apartment.Name & SpanishAve.Apartment.Unit)
         itemSR = New UIMenuItem(SustanciaRd.Apartment.Name & SustanciaRd.Apartment.Unit)
         itemTR = New UIMenuItem(TheRoyale.Apartment.Name & TheRoyale.Apartment.Unit)
-        itemGA = New UIMenuItem(GrapeseedAve.Apartment.Name & GrapeseedAve.Apartment.Unit)
-        itemPB = New UIMenuItem(PaletoBlvd.Apartment.Name & PaletoBlvd.Apartment.Unit)
-        itemSRD0112 = New UIMenuItem(SouthRockfordDr0112.Apartment.Name & SouthRockfordDr0112.Apartment.Unit)
-        itemZA = New UIMenuItem(ZancudoAve.Apartment.Name & ZancudoAve.Apartment.Unit)
+        itemGA = New UIMenuItem(ApartmentsHandler.GrapeseedAve.GetNameAndUnit())
+        itemPB = New UIMenuItem(ApartmentsHandler.PaletoBlvd.GetNameAndUnit())
+        itemSRD0112 = New UIMenuItem(ApartmentsHandler.SouthRockfordDr0112.GetNameAndUnit())
+        itemZA = New UIMenuItem(ApartmentsHandler.ZancudoAve.GetNameAndUnit())
     End Sub
 
     Public Sub OnKeyDown(o As Object, e As KeyEventArgs)

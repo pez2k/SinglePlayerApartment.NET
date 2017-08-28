@@ -571,8 +571,20 @@ Public Class SinglePlayerApartment
                     SetInteriorActive2(-909.054, -441.466, 120.205) 'weazel plaza 70
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
                     WeazelPlaza.Apartment.IsAtHome = True
-                Case "VespucciBlvd", "0112SouthRockfordDr", "ZancudoAve", "PaletoBlvd", "GrapeseedAve"
-                    SetInteriorActive2(263.86999, -998.78002, -99.010002) 'low end apartment
+                Case "VespucciBlvd"
+                    ApartmentsHandler.VespucciBlvd.ActivateInterior()
+                    Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
+                Case "0112SouthRockfordDr"
+                    ApartmentsHandler.SouthRockfordDr0112.ActivateInterior()
+                    Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
+                Case "ZancudoAve"
+                    ApartmentsHandler.ZancudoAve.ActivateInterior()
+                    Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
+                Case "PaletoBlvd"
+                    ApartmentsHandler.PaletoBlvd.ActivateInterior()
+                    Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
+                Case "GrapeseedAve"
+                    ApartmentsHandler.GrapeseedAve.ActivateInterior()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
                 Case "NConker2044"
                     ApartmentsHandler.NorthConker2044.ActivateInterior()

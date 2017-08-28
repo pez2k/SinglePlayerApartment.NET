@@ -188,6 +188,7 @@ Public Class ApartmentsHandler
     End Sub
 
     Public Shared Sub HideBlips()
+        ' Stilt
         HillcrestAve2862.HideBlips()
         HillcrestAve2868.HideBlips()
         HillcrestAve2874.HideBlips()
@@ -197,9 +198,17 @@ Public Class ApartmentsHandler
         NorthConker2045.HideBlips()
         Whispymound3677.HideBlips()
         WildOats3655.HideBlips()
+
+        ' Low end
+        GrapeseedAve.HideBlips()
+        PaletoBlvd.HideBlips()
+        SouthRockfordDr0112.HideBlips()
+        VespucciBlvd.HideBlips()
+        ZancudoAve.HideBlips()
     End Sub
 
     Public Shared Sub ShowBlips()
+        ' Stilt
         HillcrestAve2862.ShowBlips()
         HillcrestAve2868.ShowBlips()
         HillcrestAve2874.ShowBlips()
@@ -209,5 +218,12 @@ Public Class ApartmentsHandler
         NorthConker2045.ShowBlips()
         Whispymound3677.ShowBlips()
         WildOats3655.ShowBlips()
+
+        ' Low end
+        GrapeseedAve.ShowBlips()
+        PaletoBlvd.ShowBlips()
+        SouthRockfordDr0112.ShowBlips()
+        VespucciBlvd.ShowBlips()
+        ZancudoAve.ShowBlips()
     End Sub
 End Class

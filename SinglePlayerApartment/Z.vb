@@ -86,7 +86,7 @@ Public Class Z
             If ReadCfgValue("TinselTower", settingFile) = "Enable" Then TinselTower.CreateTinselTower()
             If ReadCfgValue("WeazelPlaza", settingFile) = "Enable" Then WeazelPlaza.CreateWeazelPlaza()
             If ReadCfgValue("DreamTower", settingFile) = "Enable" Then DreamTower.CreateDreamTower()
-            If ReadCfgValue("VespucciBlvd", settingFile) = "Enable" Then VespucciBlvd.CreateVespucciBlvd()
+            If ReadCfgValue("VespucciBlvd", settingFile) = "Enable" Then ApartmentsHandler.VespucciBlvd.CreateApartment()
             If ReadCfgValue("2044NorthConker", settingFile) = "Enable" Then ApartmentsHandler.NorthConker2044.CreateApartment()
             If ReadCfgValue("2862Hillcrest", settingFile) = "Enable" Then ApartmentsHandler.HillcrestAve2862.CreateApartment()
             If ReadCfgValue("2868Hillcrest", settingFile) = "Enable" Then ApartmentsHandler.HillcrestAve2868.CreateApartment()
@@ -113,10 +113,10 @@ Public Class Z
             If ReadCfgValue("SustanciaRd", settingFile) = "Enable" Then SustanciaRd.CreateSustanciaRd()
             If ReadCfgValue("4401ProcopioDr", settingFile) = "Enable" Then ProcopioDr4401.Create4401ProcopioDr()
             If ReadCfgValue("4584ProcopioDr", settingFile) = "Enable" Then ProcopioDr4584.Create4584ProcopioDr()
-            If ReadCfgValue("0112SouthRockfordDr", settingFile) = "Enable" Then SouthRockfordDr0112.Create0112SouthRockfordDr()
-            If ReadCfgValue("ZancudoAve", settingFile) = "Enable" Then ZancudoAve.CreateZancudoAve()
-            If ReadCfgValue("PaletoBlvd", settingFile) = "Enable" Then PaletoBlvd.CreatePaletoBlvd()
-            If ReadCfgValue("GrapeseedAve", settingFile) = "Enable" Then GrapeseedAve.CreateGrapeseedAve()
+            If ReadCfgValue("0112SouthRockfordDr", settingFile) = "Enable" Then ApartmentsHandler.SouthRockfordDr0112.CreateApartment()
+            If ReadCfgValue("ZancudoAve", settingFile) = "Enable" Then ApartmentsHandler.ZancudoAve.CreateApartment()
+            If ReadCfgValue("PaletoBlvd", settingFile) = "Enable" Then ApartmentsHandler.PaletoBlvd.CreateApartment()
+            If ReadCfgValue("GrapeseedAve", settingFile) = "Enable" Then ApartmentsHandler.GrapeseedAve.CreateApartment()
             LoadPosition()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
@@ -178,16 +178,6 @@ Public Class Z
                     If Not SustanciaRd.Apartment.GrgBlip Is Nothing Then SustanciaRd.Apartment.GrgBlip.Alpha = 0
                     If Not TheRoyale.Apartment.AptBlip Is Nothing Then TheRoyale.Apartment.AptBlip.Alpha = 0
                     If Not TheRoyale.Apartment.GrgBlip Is Nothing Then TheRoyale.Apartment.GrgBlip.Alpha = 0
-                    If Not GrapeseedAve.Apartment.AptBlip Is Nothing Then GrapeseedAve.Apartment.AptBlip.Alpha = 0
-                    If Not GrapeseedAve.Apartment.GrgBlip Is Nothing Then GrapeseedAve.Apartment.GrgBlip.Alpha = 0
-                    If Not PaletoBlvd.Apartment.AptBlip Is Nothing Then PaletoBlvd.Apartment.AptBlip.Alpha = 0
-                    If Not PaletoBlvd.Apartment.GrgBlip Is Nothing Then PaletoBlvd.Apartment.GrgBlip.Alpha = 0
-                    If Not SouthRockfordDr0112.Apartment.AptBlip Is Nothing Then SouthRockfordDr0112.Apartment.AptBlip.Alpha = 0
-                    If Not SouthRockfordDr0112.Apartment.GrgBlip Is Nothing Then SouthRockfordDr0112.Apartment.GrgBlip.Alpha = 0
-                    If Not VespucciBlvd.Apartment.AptBlip Is Nothing Then VespucciBlvd.Apartment.AptBlip.Alpha = 0
-                    If Not VespucciBlvd.Apartment.GrgBlip Is Nothing Then VespucciBlvd.Apartment.GrgBlip.Alpha = 0
-                    If Not ZancudoAve.Apartment.AptBlip Is Nothing Then ZancudoAve.Apartment.AptBlip.Alpha = 0
-                    If Not ZancudoAve.Apartment.GrgBlip Is Nothing Then ZancudoAve.Apartment.GrgBlip.Alpha = 0
                 Else
                     If Not _3AltaStreet.Apartment.AptBlip Is Nothing Then _3AltaStreet.Apartment.AptBlip.Alpha = 255
                     If Not _3AltaStreet.Apartment.GrgBlip Is Nothing Then _3AltaStreet.Apartment.GrgBlip.Alpha = 255
@@ -240,16 +230,6 @@ Public Class Z
                     If Not SustanciaRd.Apartment.GrgBlip Is Nothing Then SustanciaRd.Apartment.GrgBlip.Alpha = 255
                     If Not TheRoyale.Apartment.AptBlip Is Nothing Then TheRoyale.Apartment.AptBlip.Alpha = 255
                     If Not TheRoyale.Apartment.GrgBlip Is Nothing Then TheRoyale.Apartment.GrgBlip.Alpha = 255
-                    If Not GrapeseedAve.Apartment.AptBlip Is Nothing Then GrapeseedAve.Apartment.AptBlip.Alpha = 255
-                    If Not GrapeseedAve.Apartment.GrgBlip Is Nothing Then GrapeseedAve.Apartment.GrgBlip.Alpha = 255
-                    If Not PaletoBlvd.Apartment.AptBlip Is Nothing Then PaletoBlvd.Apartment.AptBlip.Alpha = 255
-                    If Not PaletoBlvd.Apartment.GrgBlip Is Nothing Then PaletoBlvd.Apartment.GrgBlip.Alpha = 255
-                    If Not SouthRockfordDr0112.Apartment.AptBlip Is Nothing Then SouthRockfordDr0112.Apartment.AptBlip.Alpha = 255
-                    If Not SouthRockfordDr0112.Apartment.GrgBlip Is Nothing Then SouthRockfordDr0112.Apartment.GrgBlip.Alpha = 255
-                    If Not VespucciBlvd.Apartment.AptBlip Is Nothing Then VespucciBlvd.Apartment.AptBlip.Alpha = 255
-                    If Not VespucciBlvd.Apartment.GrgBlip Is Nothing Then VespucciBlvd.Apartment.GrgBlip.Alpha = 255
-                    If Not ZancudoAve.Apartment.AptBlip Is Nothing Then ZancudoAve.Apartment.AptBlip.Alpha = 255
-                    If Not ZancudoAve.Apartment.GrgBlip Is Nothing Then ZancudoAve.Apartment.GrgBlip.Alpha = 255
                 End If
             End If
         Catch ex As Exception
@@ -306,15 +286,15 @@ Public Class Z
                 Case "4584ProcopioDr"
                     MediumEndLastLocationName = ProcopioDr4584.Apartment.Name & ProcopioDr4584.Apartment.Unit
                 Case "VespucciBlvd"
-                    LowEndLastLocationName = VespucciBlvd.Apartment.Name & VespucciBlvd.Apartment.Unit
+                    LowEndLastLocationName = ApartmentsHandler.VespucciBlvd.GetNameAndUnit()
                 Case "0112SouthRockfordDr"
-                    LowEndLastLocationName = SouthRockfordDr0112.Apartment.Name & SouthRockfordDr0112.Apartment.Unit
+                    LowEndLastLocationName = ApartmentsHandler.SouthRockfordDr0112.GetNameAndUnit()
                 Case "ZancudoAve"
-                    LowEndLastLocationName = ZancudoAve.Apartment.Name & ZancudoAve.Apartment.Unit
+                    LowEndLastLocationName = ApartmentsHandler.ZancudoAve.GetNameAndUnit()
                 Case "PaletoBlvd"
-                    LowEndLastLocationName = PaletoBlvd.Apartment.Name & PaletoBlvd.Apartment.Unit
+                    LowEndLastLocationName = ApartmentsHandler.PaletoBlvd.GetNameAndUnit()
                 Case "GrapeseedAve"
-                    LowEndLastLocationName = GrapeseedAve.Apartment.Name & GrapeseedAve.Apartment.Unit
+                    LowEndLastLocationName = ApartmentsHandler.GrapeseedAve.GetNameAndUnit()
             End Select
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
