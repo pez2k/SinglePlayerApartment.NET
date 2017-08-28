@@ -186,4 +186,28 @@ Public Class ApartmentsHandler
         VespucciBlvd.OnAborted()
         ZancudoAve.OnAborted()
     End Sub
+
+    Public Shared Sub HideBlips()
+        HillcrestAve2862.HideBlips()
+        HillcrestAve2868.HideBlips()
+        HillcrestAve2874.HideBlips()
+        MadWayne2113.HideBlips()
+        MiltonRd2117.HideBlips()
+        NorthConker2044.HideBlips()
+        NorthConker2045.HideBlips()
+        Whispymound3677.HideBlips()
+        WildOats3655.HideBlips()
+    End Sub
+
+    Public Shared Sub ShowBlips()
+        HillcrestAve2862.ShowBlips()
+        HillcrestAve2868.ShowBlips()
+        HillcrestAve2874.ShowBlips()
+        MadWayne2113.ShowBlips()
+        MiltonRd2117.ShowBlips()
+        NorthConker2044.ShowBlips()
+        NorthConker2045.ShowBlips()
+        Whispymound3677.ShowBlips()
+        WildOats3655.ShowBlips()
+    End Sub
 End Class

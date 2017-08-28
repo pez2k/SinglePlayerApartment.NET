@@ -62,6 +62,29 @@ Public Class StiltApartment
         End Try
     End Sub
 
+    Public Sub HideBlips()
+        If Not Apartment.AptBlip Is Nothing Then Apartment.AptBlip.Alpha = 0
+        If Not Apartment.GrgBlip Is Nothing Then Apartment.GrgBlip.Alpha = 0
+    End Sub
+
+    Public Sub ShowBlips()
+        If Not Apartment.AptBlip Is Nothing Then Apartment.AptBlip.Alpha = 255
+        If Not Apartment.GrgBlip Is Nothing Then Apartment.GrgBlip.Alpha = 255
+    End Sub
+
+    Public Function GetNameAndUnit() As String
+        Return Apartment.Name + Apartment.Unit
+    End Function
+
+    Public Sub ActivateInterior()
+        SetInteriorActive2(Apartment.Interior.X, Apartment.Interior.Y, Apartment.Interior.Z)
+        If Not My.Settings.AlwaysEnableMPMaps Then
+            LoadMPDLCMap()
+        End If
+        Apartment.IsAtHome = True
+        ToggleIPL(Apartment.IPL)
+    End Sub
+
     Public Sub CreateBuyMenu()
         Try
             BuyMenu = New UIMenu("", AptOptions, New Point(0, -107))
