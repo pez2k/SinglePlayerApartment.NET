@@ -575,58 +575,58 @@ Public Class SinglePlayerApartment
                     SetInteriorActive2(263.86999, -998.78002, -99.010002) 'low end apartment
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
                 Case "NConker2044"
-                    SetInteriorActive2(NorthConker2044.Apartment.Interior.X, NorthConker2044.Apartment.Interior.Y, NorthConker2044.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.NorthConker2044.Apartment.Interior.X, ApartmentsHandler.NorthConker2044.Apartment.Interior.Y, ApartmentsHandler.NorthConker2044.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    NorthConker2044.Apartment.IsAtHome = True
+                    ApartmentsHandler.NorthConker2044.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_04_ext1")
                 Case "HillcrestA2862"
-                    SetInteriorActive2(HillcrestAve2862.Apartment.Interior.X, HillcrestAve2862.Apartment.Interior.Y, HillcrestAve2862.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.HillcrestAve2862.Apartment.Interior.X, ApartmentsHandler.HillcrestAve2862.Apartment.Interior.Y, ApartmentsHandler.HillcrestAve2862.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    HillcrestAve2862.Apartment.IsAtHome = True
+                    ApartmentsHandler.HillcrestAve2862.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09c_ext2")
                 Case "HillcrestA2868"
-                    SetInteriorActive2(HillcrestAve2868.Apartment.Interior.X, HillcrestAve2868.Apartment.Interior.Y, HillcrestAve2868.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.HillcrestAve2868.Apartment.Interior.X, ApartmentsHandler.HillcrestAve2868.Apartment.Interior.Y, ApartmentsHandler.HillcrestAve2868.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    HillcrestAve2868.Apartment.IsAtHome = True
+                    ApartmentsHandler.HillcrestAve2868.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09b_ext3")
                 Case "WildOats3655"
-                    SetInteriorActive2(WildOats3655.Apartment.Interior.X, WildOats3655.Apartment.Interior.Y, WildOats3655.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.WildOats3655.Apartment.Interior.X, ApartmentsHandler.WildOats3655.Apartment.Interior.Y, ApartmentsHandler.WildOats3655.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    WildOats3655.Apartment.IsAtHome = True
+                    ApartmentsHandler.WildOats3655.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_05e_ext1")
                 Case "NConker2045"
-                    SetInteriorActive2(NorthConker2045.Apartment.Interior.X, NorthConker2045.Apartment.Interior.Y, NorthConker2045.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.NorthConker2045.Apartment.Interior.X, ApartmentsHandler.NorthConker2045.Apartment.Interior.Y, ApartmentsHandler.NorthConker2045.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    NorthConker2045.Apartment.IsAtHome = True
+                    ApartmentsHandler.NorthConker2045.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_04_ext2")
                 Case "MiltonR2117"
-                    SetInteriorActive2(MiltonRd2117.Apartment.Interior.X, MiltonRd2117.Apartment.Interior.Y, MiltonRd2117.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.MiltonRd2117.Apartment.Interior.X, ApartmentsHandler.MiltonRd2117.Apartment.Interior.Y, ApartmentsHandler.MiltonRd2117.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    MiltonRd2117.Apartment.IsAtHome = True
+                    ApartmentsHandler.MiltonRd2117.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09c_ext3")
                 Case "HillcrestA2874"
-                    SetInteriorActive2(HillcrestAve2874.Apartment.Interior.X, HillcrestAve2874.Apartment.Interior.Y, HillcrestAve2874.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.HillcrestAve2874.Apartment.Interior.X, ApartmentsHandler.HillcrestAve2874.Apartment.Interior.Y, ApartmentsHandler.HillcrestAve2874.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    HillcrestAve2874.Apartment.IsAtHome = True
+                    ApartmentsHandler.HillcrestAve2874.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_09b_ext2")
                 Case "Whispy3677"
-                    SetInteriorActive2(Whispymound3677.Apartment.Interior.X, Whispymound3677.Apartment.Interior.Y, Whispymound3677.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.Whispymound3677.Apartment.Interior.X, ApartmentsHandler.Whispymound3677.Apartment.Interior.Y, ApartmentsHandler.Whispymound3677.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    Whispymound3677.Apartment.IsAtHome = True
+                    ApartmentsHandler.Whispymound3677.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_05c_ext1")
                 Case "MadWayne2113"
-                    SetInteriorActive2(MadWayne2113.Apartment.Interior.X, MadWayne2113.Apartment.Interior.Y, MadWayne2113.Apartment.Interior.Z)
+                    SetInteriorActive2(ApartmentsHandler.MadWayne2113.Apartment.Interior.X, ApartmentsHandler.MadWayne2113.Apartment.Interior.Y, ApartmentsHandler.MadWayne2113.Apartment.Interior.Z)
                     If My.Settings.AlwaysEnableMPMaps = False Then LoadMPDLCMap()
                     Game.Player.Character.Position = New Vector3(lastPosX, lastPosY, lastPosZ)
-                    MadWayne2113.Apartment.IsAtHome = True
+                    ApartmentsHandler.MadWayne2113.Apartment.IsAtHome = True
                     ToggleIPL("apa_stilt_ch2_12b_ext1")
                 Case "EclipsePS1"
                     SetInteriorActive2(EclipseTower.ApartmentPS1.Interior.X, EclipseTower.ApartmentPS1.Interior.Y, EclipseTower.ApartmentPS1.Interior.Z)

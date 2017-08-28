@@ -10,12 +10,12 @@ Imports SinglePlayerApartment.Resources
 
 Public Class StiltApartment
 
-    Public Shared Apartment As Apartment
-    Public Shared BuyMenu, ExitMenu, GarageMenu As UIMenu
-    Public Shared _menuPool As MenuPool
-    Public Shared SettingName As String
-    Public Shared XmasTreeLocation As Vector3
-    Public Shared HideMapObjects() As String
+    Public Apartment As Apartment
+    Public BuyMenu, ExitMenu, GarageMenu As UIMenu
+    Public _menuPool As MenuPool
+    Public SettingName As String
+    Public XmasTreeLocation As Vector3
+    Public HideMapObjects() As String
 
     Public Sub Init()
         Try
@@ -62,7 +62,7 @@ Public Class StiltApartment
         End Try
     End Sub
 
-    Public Shared Sub CreateBuyMenu()
+    Public Sub CreateBuyMenu()
         Try
             BuyMenu = New UIMenu("", AptOptions, New Point(0, -107))
             Dim Rectangle = New UIResRectangle()
@@ -91,7 +91,7 @@ Public Class StiltApartment
         End Try
     End Sub
 
-    Public Shared Sub RefreshMenu()
+    Public Sub RefreshMenu()
         BuyMenu.MenuItems.Clear()
         Dim item As New UIMenuItem(Apartment.Name & Apartment.Unit, Apartment.Description)
         With item
@@ -112,7 +112,7 @@ Public Class StiltApartment
         BuyMenu.RefreshIndex()
     End Sub
 
-    Public Shared Sub RefreshGarageMenu()
+    Public Sub RefreshGarageMenu()
         GarageMenu.MenuItems.Clear()
         Dim item As New UIMenuItem(Apartment.Name & Apartment.Unit & Garage)
         With item
@@ -132,7 +132,7 @@ Public Class StiltApartment
         GarageMenu.RefreshIndex()
     End Sub
 
-    Public Shared Sub CreateExitMenu()
+    Public Sub CreateExitMenu()
         Try
             ExitMenu = New UIMenu("", AptOptions, New Point(0, -107))
             Dim Rectangle = New UIResRectangle()
@@ -148,7 +148,7 @@ Public Class StiltApartment
         End Try
     End Sub
 
-    Public Shared Sub CreateGarageMenu()
+    Public Sub CreateGarageMenu()
         Try
             GarageMenu = New UIMenu("", GrgOptions, New Point(0, -107))
             Dim Rectangle = New UIResRectangle()
@@ -176,7 +176,7 @@ Public Class StiltApartment
         End Try
     End Sub
 
-    Public Shared Sub CreateApartment()
+    Public Sub CreateApartment()
         Apartment.Create({Apartment})
     End Sub
 
