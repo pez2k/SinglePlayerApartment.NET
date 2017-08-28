@@ -368,7 +368,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh0, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(0), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)
@@ -379,7 +379,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh1, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(1), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)
@@ -390,7 +390,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh2, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(2), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)
@@ -401,7 +401,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh3, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(3), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)
@@ -412,7 +412,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh4, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(4), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)
@@ -423,7 +423,7 @@ Public Class VespucciBlvd
                 SixCarGarage.LoadGarageVechicles(Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = SixCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, SixCarGarage.veh5, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, SixCarGarage.vehicleList(5), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Script.Wait(500)
                 Game.FadeScreenIn(500)

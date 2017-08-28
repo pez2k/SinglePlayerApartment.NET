@@ -634,7 +634,7 @@ Label_005C:
         Select Case PlayerPed.CurrentVehicle
             Case TenCarGarage.vehicleList(0), TenCarGarage.vehicleList(1), TenCarGarage.vehicleList(2), TenCarGarage.vehicleList(3), TenCarGarage.vehicleList(4), TenCarGarage.vehicleList(5), TenCarGarage.vehicleList(6), TenCarGarage.vehicleList(7), TenCarGarage.vehicleList(8), TenCarGarage.vehicleList(9)
                 Result = True
-            Case SixCarGarage.veh0, SixCarGarage.veh1, SixCarGarage.veh2, SixCarGarage.veh3, SixCarGarage.veh4, SixCarGarage.veh5
+            Case SixCarGarage.vehicleList(0), SixCarGarage.vehicleList(1), SixCarGarage.vehicleList(2), SixCarGarage.vehicleList(3), SixCarGarage.vehicleList(4), SixCarGarage.vehicleList(5)
                 Result = True
             Case Else
                 Result = False
