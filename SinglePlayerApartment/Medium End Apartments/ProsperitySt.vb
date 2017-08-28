@@ -192,7 +192,7 @@ Public Class ProsperitySt
     End Sub
 
     Public Shared Sub CreateProsperitySt()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

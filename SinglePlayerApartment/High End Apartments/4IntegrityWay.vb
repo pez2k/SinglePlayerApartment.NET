@@ -293,7 +293,7 @@ Public Class _4IntegrityWay
     End Sub
 
     Public Shared Sub Create4IntegrityWay()
-        Apartment.Create(Apartment, ApartmentHL)
+        Apartment.Create({Apartment, ApartmentHL})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

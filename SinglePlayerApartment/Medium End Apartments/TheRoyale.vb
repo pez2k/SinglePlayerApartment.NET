@@ -192,7 +192,7 @@ Public Class TheRoyale
     End Sub
 
     Public Shared Sub CreateTheRoyale()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

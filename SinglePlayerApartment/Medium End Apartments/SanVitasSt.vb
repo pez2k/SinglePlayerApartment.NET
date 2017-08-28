@@ -192,7 +192,7 @@ Public Class SanVitasSt
     End Sub
 
     Public Shared Sub CreateSanVitasSt()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

@@ -192,7 +192,7 @@ Public Class PowerSt
     End Sub
 
     Public Shared Sub CreatePowerSt()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

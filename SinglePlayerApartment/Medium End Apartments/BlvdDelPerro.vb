@@ -191,7 +191,7 @@ Public Class BlvdDelPerro
     End Sub
 
     Public Shared Sub CreateBlvdDelPerro()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

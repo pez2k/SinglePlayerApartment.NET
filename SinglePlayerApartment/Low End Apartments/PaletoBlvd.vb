@@ -192,7 +192,7 @@ Public Class PaletoBlvd
     End Sub
 
     Public Shared Sub CreatePaletoBlvd()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

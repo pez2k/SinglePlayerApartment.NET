@@ -192,7 +192,7 @@ Public Class SustanciaRd
     End Sub
 
     Public Shared Sub CreateSustanciaRd()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

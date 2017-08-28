@@ -291,7 +291,7 @@ Public Class RichardMajestic
     End Sub
 
     Public Shared Sub CreateRichardsMajestic()
-        Apartment.Create(Apartment, ApartmentHL)
+        Apartment.Create({Apartment, ApartmentHL})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

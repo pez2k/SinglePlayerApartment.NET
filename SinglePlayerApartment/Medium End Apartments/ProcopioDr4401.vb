@@ -191,7 +191,7 @@ Public Class ProcopioDr4401
     End Sub
 
     Public Shared Sub Create4401ProcopioDr()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

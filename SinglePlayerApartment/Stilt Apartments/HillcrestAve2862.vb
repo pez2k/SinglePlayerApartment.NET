@@ -194,7 +194,7 @@ Public Class HillcrestAve2862
     End Sub
 
     Public Shared Sub CreateHillcrestAve2862()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

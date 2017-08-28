@@ -194,7 +194,7 @@ Public Class _3AltaStreet
     End Sub
 
     Public Shared Sub Create3AltaStreet()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

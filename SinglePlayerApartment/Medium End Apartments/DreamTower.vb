@@ -192,7 +192,7 @@ Public Class DreamTower
     End Sub
 
     Public Shared Sub CreateDreamTower()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

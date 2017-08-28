@@ -293,7 +293,7 @@ Public Class DelPerroHeight
     End Sub
 
     Public Shared Sub CreateDelPerroHeight()
-        Apartment.Create(Apartment, ApartmentHL)
+        Apartment.Create({Apartment, ApartmentHL})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

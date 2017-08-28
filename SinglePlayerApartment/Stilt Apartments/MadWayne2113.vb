@@ -194,7 +194,7 @@ Public Class MadWayne2113
     End Sub
 
     Public Shared Sub CreateMadWayne2113()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

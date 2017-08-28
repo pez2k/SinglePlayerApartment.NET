@@ -192,7 +192,7 @@ Public Class MiltonRd0184
     End Sub
 
     Public Shared Sub Create0184MiltonRoad()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

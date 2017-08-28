@@ -191,7 +191,7 @@ Public Class GrapeseedAve
     End Sub
 
     Public Shared Sub CreateGrapeseedAve()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

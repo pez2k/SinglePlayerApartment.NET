@@ -192,7 +192,7 @@ Public Class SpanishAve
     End Sub
 
     Public Shared Sub CreateSpanishAve()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

@@ -192,7 +192,7 @@ Public Class SouthMoMiltonDr
     End Sub
 
     Public Shared Sub CreateSouthMoMiltonDr()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

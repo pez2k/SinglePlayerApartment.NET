@@ -192,7 +192,7 @@ Public Class HangmanAve
     End Sub
 
     Public Shared Sub CreateHangmanAve()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

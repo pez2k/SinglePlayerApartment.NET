@@ -692,7 +692,7 @@ Public Class EclipseTower
     End Sub
 
     Public Shared Sub CreateEclipseTower()
-        Apartment.Create5(Apartment, ApartmentHL, ApartmentPS1, ApartmentPS2, ApartmentPS3)
+        Apartment.Create({Apartment, ApartmentHL, ApartmentPS1, ApartmentPS2, ApartmentPS3})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

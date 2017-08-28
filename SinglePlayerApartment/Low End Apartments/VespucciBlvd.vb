@@ -191,7 +191,7 @@ Public Class VespucciBlvd
     End Sub
 
     Public Shared Sub CreateVespucciBlvd()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

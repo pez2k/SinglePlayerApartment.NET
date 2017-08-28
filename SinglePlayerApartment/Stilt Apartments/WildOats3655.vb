@@ -194,7 +194,7 @@ Public Class WildOats3655
     End Sub
 
     Public Shared Sub CreateWildOats3655()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

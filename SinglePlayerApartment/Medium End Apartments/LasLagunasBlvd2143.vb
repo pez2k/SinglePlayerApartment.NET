@@ -192,7 +192,7 @@ Public Class LasLagunasBlvd2143
     End Sub
 
     Public Shared Sub Create2143LasLagunasBlvd()
-        Apartment.Create(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

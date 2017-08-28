@@ -194,7 +194,7 @@ Public Class NorthConker2045
     End Sub
 
     Public Shared Sub CreateNorthConker2045()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

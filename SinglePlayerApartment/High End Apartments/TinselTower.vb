@@ -293,7 +293,7 @@ Public Class TinselTower
     End Sub
 
     Public Shared Sub CreateTinselTower()
-        Apartment.Create(Apartment, ApartmentHL)
+        Apartment.Create({Apartment, ApartmentHL})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)

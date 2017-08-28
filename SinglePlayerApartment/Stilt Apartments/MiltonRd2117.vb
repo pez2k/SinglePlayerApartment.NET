@@ -194,7 +194,7 @@ Public Class MiltonRd2117
     End Sub
 
     Public Shared Sub CreateMiltonRoad2117()
-        Apartment.CreateStilt(Apartment)
+        Apartment.Create({Apartment})
     End Sub
 
     Public Sub MenuCloseHandler(sender As UIMenu)
