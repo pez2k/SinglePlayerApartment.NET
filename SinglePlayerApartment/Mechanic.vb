@@ -2239,28 +2239,22 @@ Public Class Mechanic
                 If VehPrice = 0 Then
                     UI.ShowSubtitle(GrgTooHot)
                 Else
-                    Select Case GarageMenuSelectedFile
-                        Case "vehicle_0.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(0).Delete() Else SixCarGarage.vehicleList(0).Delete()
-                        Case "vehicle_1.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(1).Delete() Else SixCarGarage.vehicleList(1).Delete()
-                        Case "vehicle_2.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(2).Delete() Else SixCarGarage.vehicleList(2).Delete()
-                        Case "vehicle_3.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(3).Delete() Else SixCarGarage.vehicleList(3).Delete()
-                        Case "vehicle_4.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(4).Delete() Else SixCarGarage.vehicleList(4).Delete()
-                        Case "vehicle_5.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(5).Delete() Else SixCarGarage.vehicleList(5).Delete()
-                        Case "vehicle_6.cfg"
-                            TenCarGarage.vehicleList(6).Delete()
-                        Case "vehicle_7.cfg"
-                            TenCarGarage.vehicleList(7).Delete()
-                        Case "vehicle_8.cfg"
-                            TenCarGarage.vehicleList(8).Delete()
-                        Case "vehicle_9.cfg"
-                            TenCarGarage.vehicleList(9).Delete()
-                    End Select
+                    If SelectedGarage = "Ten" Then
+                        For i = 1 To TenCarGarage.vehicleList.GetUpperBound(0)
+                            If GarageMenuSelectedFile.Contains(i.ToString()) Then
+                                TenCarGarage.vehicleList(i).Delete()
+                                Exit For
+                            End If
+                        Next
+                    Else
+                        For i = 1 To SixCarGarage.vehicleList.GetUpperBound(0)
+                            If GarageMenuSelectedFile.Contains(i.ToString()) Then
+                                SixCarGarage.vehicleList(i).Delete()
+                                Exit For
+                            End If
+                        Next
+                    End If
+
                     SinglePlayerApartment.player.Money = (playerCash + VehPrice)
                     CreateGarageMenu(Path)
                     IO.File.Delete(Path & GarageMenuSelectedFile)
@@ -2276,68 +2270,23 @@ Public Class Mechanic
             ElseIf selectedItem.Text = GrgPlate Then
                 Dim VehPlate As String = Game.GetUserInput(ReadCfgValue("PlateNumber", Path & GarageMenuSelectedFile), 9)
                 If VehPlate <> "" Then
-                    Select Case GarageMenuSelectedFile
-                        Case "vehicle_0.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(0).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(0).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(0).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(0).NumberPlate, Path & GarageMenuSelectedFile)
+                    If SelectedGarage = "Ten" Then
+                        For i = 1 To TenCarGarage.vehicleList.GetUpperBound(0)
+                            If GarageMenuSelectedFile.Contains(i.ToString()) Then
+                                TenCarGarage.vehicleList(i).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(i).NumberPlate, Path & GarageMenuSelectedFile)
+                                Exit For
                             End If
-                        Case "vehicle_1.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(1).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(1).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(1).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(1).NumberPlate, Path & GarageMenuSelectedFile)
+                        Next
+                    Else
+                        For i = 1 To SixCarGarage.vehicleList.GetUpperBound(0)
+                            If GarageMenuSelectedFile.Contains(i.ToString()) Then
+                                SixCarGarage.vehicleList(i).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(i).NumberPlate, Path & GarageMenuSelectedFile)
+                                Exit For
                             End If
-                        Case "vehicle_2.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(2).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(2).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(2).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(2).NumberPlate, Path & GarageMenuSelectedFile)
-                            End If
-                        Case "vehicle_3.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(3).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(3).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(3).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(3).NumberPlate, Path & GarageMenuSelectedFile)
-                            End If
-                        Case "vehicle_4.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(4).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(4).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(4).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(4).NumberPlate, Path & GarageMenuSelectedFile)
-                            End If
-                        Case "vehicle_5.cfg"
-                            If SelectedGarage = "Ten" Then
-                                TenCarGarage.vehicleList(5).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(5).NumberPlate, Path & GarageMenuSelectedFile)
-                            Else
-                                SixCarGarage.vehicleList(5).NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", SixCarGarage.vehicleList(5).NumberPlate, Path & GarageMenuSelectedFile)
-                            End If
-                        Case "vehicle_6.cfg"
-                            TenCarGarage.vehicleList(6).NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(6).NumberPlate, Path & GarageMenuSelectedFile)
-                        Case "vehicle_7.cfg"
-                            TenCarGarage.vehicleList(7).NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(7).NumberPlate, Path & GarageMenuSelectedFile)
-                        Case "vehicle_8.cfg"
-                            TenCarGarage.vehicleList(8).NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(8).NumberPlate, Path & GarageMenuSelectedFile)
-                        Case "vehicle_9.cfg"
-                            TenCarGarage.vehicleList(9).NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(9).NumberPlate, Path & GarageMenuSelectedFile)
-                    End Select
+                        Next
+                    End If
                 End If
                 If SelectedGarage = "Ten" Then TenCarGarage.LoadGarageVechicles(Path)
                 If SelectedGarage = "Six" Then SixCarGarage.LoadGarageVechicles(Path)
@@ -2365,20 +2314,13 @@ Public Class Mechanic
     Public Shared Sub ItemSelectHandler6CarGarage(sender As UIMenu, selectedItem As UIMenuItem, index As Integer)
         Try
             If Not selectedItem.Text = "Empty" Then
-                Select Case selectedItem.SubString1
-                    Case "vehicle_0.cfg"
-                        SixCarGarage.vehicleList(0).Delete()
-                    Case "vehicle_1.cfg"
-                        SixCarGarage.vehicleList(1).Delete()
-                    Case "vehicle_2.cfg"
-                        SixCarGarage.vehicleList(2).Delete()
-                    Case "vehicle_3.cfg"
-                        SixCarGarage.vehicleList(3).Delete()
-                    Case "vehicle_4.cfg"
-                        SixCarGarage.vehicleList(4).Delete()
-                    Case "vehicle_5.cfg"
-                        SixCarGarage.vehicleList(5).Delete()
-                End Select
+                For i = 1 To SixCarGarage.vehicleList.GetUpperBound(0)
+                    If selectedItem.SubString1.Contains(i.ToString()) Then
+                        SixCarGarage.vehicleList(i).Delete()
+                        Exit For
+                    End If
+                Next
+
                 IO.File.Delete(Path & selectedItem.SubString1)
                 selectedItem.Text = "Empty"
             End If
