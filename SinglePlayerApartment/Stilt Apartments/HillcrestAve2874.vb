@@ -380,7 +380,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh0, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(0), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -391,7 +391,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh1, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(1), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -402,7 +402,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh2, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(2), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -413,7 +413,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh3, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(3), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -424,7 +424,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh4, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(4), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -435,7 +435,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh5, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(5), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -446,7 +446,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh6, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(6), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -457,7 +457,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh7, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(7), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -468,7 +468,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh8, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(8), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)
@@ -479,7 +479,7 @@ Public Class HillcrestAve2874
                 TenCarGarage.LoadGarageVechicles(_Apartment.GaragePath)
                 playerPed.CurrentVehicle.Delete()
                 playerPed.Position = TenCarGarage.GarageDoorL
-                SetIntoVehicle(playerPed, TenCarGarage.veh9, VehicleSeat.Driver)
+                SetIntoVehicle(playerPed, TenCarGarage.vehicleList(9), VehicleSeat.Driver)
                 playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
                 Wait(500)
                 Game.FadeScreenIn(500)

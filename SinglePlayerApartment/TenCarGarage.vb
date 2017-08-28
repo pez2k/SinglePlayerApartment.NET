@@ -10,7 +10,17 @@ Public Class TenCarGarage
 
     Public Shared InteriorID As Integer
     Public Shared CurrentPath As String
-    Public Shared veh0, veh1, veh2, veh3, veh4, veh5, veh6, veh7, veh8, veh9 As Vehicle
+    Public Shared vehicleList(10) As Vehicle
+    Public Shared vehiclePositions = New Vector3() {New Vector3(223.4, -1001, -99.0),
+                                                    New Vector3(223.4, -996, -99.0),
+                                                    New Vector3(223.4, -991, -99.0),
+                                                    New Vector3(223.4, -986, -99.0),
+                                                    New Vector3(223.4, -981, -99.0),
+                                                    New Vector3(232.7, -1001, -99.0),
+                                                    New Vector3(232.7, -996, -99.0),
+                                                    New Vector3(232.7, -991, -99.0),
+                                                    New Vector3(232.7, -986, -99.0),
+                                                    New Vector3(232.7, -981, -99.0)}
     Public Shared LastLocationName As String
     Public Shared lastLocationVector As Vector3
     Public Shared lastLocationGarageVector As Vector3
@@ -25,16 +35,6 @@ Public Class TenCarGarage
     Public Shared GarageDoorLDistance As Single
     Public Shared GarageDoorRDistance As Single
     Public Shared GarageMarkerDistance As Single
-    Public Shared veh0Pos As Vector3 = New Vector3(223.4, -1001, -99.0)
-    Public Shared veh1Pos As Vector3 = New Vector3(223.4, -996, -99.0)
-    Public Shared veh2Pos As Vector3 = New Vector3(223.4, -991, -99.0)
-    Public Shared veh3Pos As Vector3 = New Vector3(223.4, -986, -99.0)
-    Public Shared veh4Pos As Vector3 = New Vector3(223.4, -981, -99.0)
-    Public Shared veh5Pos As Vector3 = New Vector3(232.7, -1001, -99.0)
-    Public Shared veh6Pos As Vector3 = New Vector3(232.7, -996, -99.0)
-    Public Shared veh7Pos As Vector3 = New Vector3(232.7, -991, -99.0)
-    Public Shared veh8Pos As Vector3 = New Vector3(232.7, -986, -99.0)
-    Public Shared veh9Pos As Vector3 = New Vector3(232.7, -981, -99.0)
     Public Shared vehRot04 As Vector3 = New Vector3(0, 0, 241.3)
     Public Shared vehRot59 As Vector3 = New Vector3(0, 0, 116.3)
 
@@ -69,216 +69,37 @@ Public Class TenCarGarage
         End Try
     End Sub
 
-#Region "LoadGarageVehicles"
-    Public Shared Sub LoadGarageVehicle0(file As String, pos As Vector3, rot As Vector3, head As Single)
+    Public Shared Sub LoadGarageVehicle(ByRef veh As Vehicle, file As String, pos As Vector3, rot As Vector3, head As Single)
         Try
-            If veh0 = Nothing Then
-                veh0 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh0.Delete()
-                veh0 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
+            If veh <> Nothing Then
+                veh.Delete()
             End If
 
-            SetModKit(veh0, file, False)
-            veh0.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh0.Delete()
+            veh = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
+            SetModKit(veh, file, False)
+            veh.Rotation = rot
+            If ReadCfgBool("Active", file) Then veh.Delete()
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
     End Sub
-
-    Public Shared Sub LoadGarageVehicle1(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh1 = Nothing Then
-                veh1 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh1.Delete()
-                veh1 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh1, file, False)
-            veh1.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh1.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle2(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh2 = Nothing Then
-                veh2 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh2.Delete()
-                veh2 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh2, file, False)
-            veh2.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh2.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle3(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh3 = Nothing Then
-                veh3 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh3.Delete()
-                veh3 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh3, file, False)
-            veh3.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh3.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle4(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh4 = Nothing Then
-                veh4 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh4.Delete()
-                veh4 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh4, file, False)
-            veh4.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh4.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle5(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh5 = Nothing Then
-                veh5 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh5.Delete()
-                veh5 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh5, file, False)
-            veh5.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh5.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle6(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh6 = Nothing Then
-                veh6 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh6.Delete()
-                veh6 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh6, file, False)
-            veh6.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh6.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle7(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh7 = Nothing Then
-                veh7 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh7.Delete()
-                veh7 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh7, file, False)
-            veh7.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh7.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle8(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh8 = Nothing Then
-                veh8 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh8.Delete()
-                veh8 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh8, file, False)
-            veh8.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh8.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-
-    Public Shared Sub LoadGarageVehicle9(file As String, pos As Vector3, rot As Vector3, head As Single)
-        Try
-            If veh9 = Nothing Then
-                veh9 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            Else
-                veh9.Delete()
-                veh9 = CreateVehicle(ReadCfgValue("VehicleModel", file), ReadCfgValue("VehicleHash", file), pos, head)
-            End If
-
-            SetModKit(veh9, file, False)
-            veh9.Rotation = rot
-            If ReadCfgBool("Active", file) Then veh9.Delete()
-        Catch ex As Exception
-            logger.Log(ex.Message & " " & ex.StackTrace)
-        End Try
-    End Sub
-#End Region
 
     Public Shared Sub LoadGarageVechicles(file As String)
         Try
-            If Not veh0 = Nothing Then veh0.Delete()
-            If Not veh1 = Nothing Then veh1.Delete()
-            If Not veh2 = Nothing Then veh2.Delete()
-            If Not veh3 = Nothing Then veh3.Delete()
-            If Not veh4 = Nothing Then veh4.Delete()
-            If Not veh5 = Nothing Then veh5.Delete()
-            If Not veh6 = Nothing Then veh6.Delete()
-            If Not veh7 = Nothing Then veh7.Delete()
-            If Not veh8 = Nothing Then veh8.Delete()
-            If Not veh9 = Nothing Then veh9.Delete()
+            For i = 0 To vehicleList.GetUpperBound(0)
+                If vehicleList(i) <> Nothing Then
+                    vehicleList(i).Delete()
+                End If
+                If IO.File.Exists(file & "vehicle_" + i.ToString() + ".cfg") Then
+                    LoadGarageVehicle(vehicleList(i), file & "vehicle_" + i.ToString() + ".cfg", vehiclePositions(i), If(i < (vehicleList.GetUpperBound(0) / 2), vehRot04, vehRot59), -60)
+                End If
 
-            If IO.File.Exists(file & "vehicle_0.cfg") Then LoadGarageVehicle0(file & "vehicle_0.cfg", veh0Pos, vehRot04, -60)
-            If IO.File.Exists(file & "vehicle_1.cfg") Then LoadGarageVehicle1(file & "vehicle_1.cfg", veh1Pos, vehRot04, -60)
-            If IO.File.Exists(file & "vehicle_2.cfg") Then LoadGarageVehicle2(file & "vehicle_2.cfg", veh2Pos, vehRot04, -60)
-            If IO.File.Exists(file & "vehicle_3.cfg") Then LoadGarageVehicle3(file & "vehicle_3.cfg", veh3Pos, vehRot04, -60)
-            If IO.File.Exists(file & "vehicle_4.cfg") Then LoadGarageVehicle4(file & "vehicle_4.cfg", veh4Pos, vehRot04, -60)
-            If IO.File.Exists(file & "vehicle_5.cfg") Then LoadGarageVehicle5(file & "vehicle_5.cfg", veh5Pos, vehRot59, -60)
-            If IO.File.Exists(file & "vehicle_6.cfg") Then LoadGarageVehicle6(file & "vehicle_6.cfg", veh6Pos, vehRot59, -60)
-            If IO.File.Exists(file & "vehicle_7.cfg") Then LoadGarageVehicle7(file & "vehicle_7.cfg", veh7Pos, vehRot59, -60)
-            If IO.File.Exists(file & "vehicle_8.cfg") Then LoadGarageVehicle8(file & "vehicle_8.cfg", veh8Pos, vehRot59, -60)
-            If IO.File.Exists(file & "vehicle_9.cfg") Then LoadGarageVehicle9(file & "vehicle_9.cfg", veh9Pos, vehRot59, -60)
+                vehicleList(i).MarkAsNoLongerNeeded()
+            Next
 
             Mechanic.Path = file
             Mechanic.CreateGarageMenu(file)
             Mechanic.CreateGarageMenu2("Ten")
-
-            veh0.MarkAsNoLongerNeeded()
-            veh1.MarkAsNoLongerNeeded()
-            veh2.MarkAsNoLongerNeeded()
-            veh3.MarkAsNoLongerNeeded()
-            veh4.MarkAsNoLongerNeeded()
-            veh5.MarkAsNoLongerNeeded()
-            veh6.MarkAsNoLongerNeeded()
-            veh7.MarkAsNoLongerNeeded()
-            veh8.MarkAsNoLongerNeeded()
-            veh9.MarkAsNoLongerNeeded()
 
             IfReturnedVehicle()
         Catch ex As Exception
@@ -289,26 +110,13 @@ Public Class TenCarGarage
     Public Shared Sub RefreshGarageVehicles(file As String)
         Try
             If Not Game.Player.Character.IsInVehicle Then
-                If IO.File.Exists(file & "vehicle_0.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_0.cfg") AndAlso Not veh0.Exists Then LoadGarageVehicle0(file & "vehicle_0.cfg", veh0Pos, vehRot04, -60)
-                If IO.File.Exists(file & "vehicle_1.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_1.cfg") AndAlso Not veh1.Exists Then LoadGarageVehicle1(file & "vehicle_1.cfg", veh1Pos, vehRot04, -60)
-                If IO.File.Exists(file & "vehicle_2.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_2.cfg") AndAlso Not veh2.Exists Then LoadGarageVehicle2(file & "vehicle_2.cfg", veh2Pos, vehRot04, -60)
-                If IO.File.Exists(file & "vehicle_3.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_3.cfg") AndAlso Not veh3.Exists Then LoadGarageVehicle3(file & "vehicle_3.cfg", veh3Pos, vehRot04, -60)
-                If IO.File.Exists(file & "vehicle_4.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_4.cfg") AndAlso Not veh4.Exists Then LoadGarageVehicle4(file & "vehicle_4.cfg", veh4Pos, vehRot04, -60)
-                If IO.File.Exists(file & "vehicle_5.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_5.cfg") AndAlso Not veh5.Exists Then LoadGarageVehicle5(file & "vehicle_5.cfg", veh5Pos, vehRot59, -60)
-                If IO.File.Exists(file & "vehicle_6.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_6.cfg") AndAlso Not veh6.Exists Then LoadGarageVehicle6(file & "vehicle_6.cfg", veh6Pos, vehRot59, -60)
-                If IO.File.Exists(file & "vehicle_7.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_7.cfg") AndAlso Not veh7.Exists Then LoadGarageVehicle7(file & "vehicle_7.cfg", veh7Pos, vehRot59, -60)
-                If IO.File.Exists(file & "vehicle_8.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_8.cfg") AndAlso Not veh8.Exists Then LoadGarageVehicle8(file & "vehicle_8.cfg", veh8Pos, vehRot59, -60)
-                If IO.File.Exists(file & "vehicle_9.cfg") Then If Not ReadCfgBool("Active", file & "vehicle_9.cfg") AndAlso Not veh9.Exists Then LoadGarageVehicle9(file & "vehicle_9.cfg", veh9Pos, vehRot59, -60)
-                veh0.MarkAsNoLongerNeeded()
-                veh1.MarkAsNoLongerNeeded()
-                veh2.MarkAsNoLongerNeeded()
-                veh3.MarkAsNoLongerNeeded()
-                veh4.MarkAsNoLongerNeeded()
-                veh5.MarkAsNoLongerNeeded()
-                veh6.MarkAsNoLongerNeeded()
-                veh7.MarkAsNoLongerNeeded()
-                veh8.MarkAsNoLongerNeeded()
-                veh9.MarkAsNoLongerNeeded()
+                For i = 0 To vehicleList.GetUpperBound(0)
+                    If IO.File.Exists(file & "vehicle_" + i.ToString() + ".cfg") AndAlso Not ReadCfgBool("Active", file & "vehicle_" + i.ToString() + ".cfg") AndAlso Not vehicleList(i).Exists Then
+                        LoadGarageVehicle(vehicleList(i), file & "vehicle_" + i.ToString() + ".cfg", vehiclePositions(i), If(i < (vehicleList.GetUpperBound(0) / 2), vehRot04, vehRot59), -60)
+                    End If
+
+                    vehicleList(i).MarkAsNoLongerNeeded()
+                Next
             End If
         Catch ex As Exception
             'logger.Log(ex.Message & " " & ex.StackTrace)
@@ -466,198 +274,34 @@ Public Class TenCarGarage
 
     Public Shared Sub SaveGarageVehicle(file As String)
         Try
-            If Not IO.File.Exists(file & "vehicle_0.cfg") Then
-                CreateFile(file & "vehicle_0.cfg")
-                UpdateGarageVehicle(file & "vehicle_0.cfg", "False")
-                LoadGarageVehicle0(file & "vehicle_0.cfg", veh0Pos, vehRot04, -60)
-                IfTransferVehicle()
-                Game.FadeScreenOut(500)
-                Wait(&H3E8)
-                playerPed.CurrentVehicle.Delete()
-                If Not veh0 = Nothing Then
-                    playerPed.Position = veh0Pos
-                    SetIntoVehicle(playerPed, veh0, VehicleSeat.Driver)
-                Else
-                    playerPed.Position = veh0Pos
-                End If
-                Wait(500)
-                Game.FadeScreenIn(500)
-                playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-            Else
-                If Not IO.File.Exists(file & "vehicle_1.cfg") Then
-                    CreateFile(file & "vehicle_1.cfg")
-                    UpdateGarageVehicle(file & "vehicle_1.cfg", "False")
-                    LoadGarageVehicle1(file & "vehicle_1.cfg", veh1Pos, vehRot04, -60)
+            For i = 0 To vehicleList.GetUpperBound(0)
+                If Not IO.File.Exists(file & "vehicle_" + i.ToString() + ".cfg") Then
+                    CreateFile(file & "vehicle_" + i.ToString() + ".cfg")
+                    UpdateGarageVehicle(file & "vehicle_" + i.ToString() + ".cfg", "False")
+                    LoadGarageVehicle(vehicleList(i), file & "vehicle_" + i.ToString() + ".cfg", vehiclePositions(i), If(i < (vehicleList.GetUpperBound(0) / 2), vehRot04, vehRot59), -60)
                     IfTransferVehicle()
                     Game.FadeScreenOut(500)
                     Wait(&H3E8)
                     playerPed.CurrentVehicle.Delete()
-                    If Not veh1 = Nothing Then
-                        playerPed.Position = veh1Pos
-                        SetIntoVehicle(playerPed, veh1, VehicleSeat.Driver)
+                    If vehicleList(i) <> Nothing Then
+                        playerPed.Position = vehiclePositions(i)
+                        SetIntoVehicle(playerPed, vehicleList(i), VehicleSeat.Driver)
                     Else
-                        playerPed.Position = veh1Pos
+                        playerPed.Position = vehiclePositions(i)
                     End If
                     Wait(500)
                     Game.FadeScreenIn(500)
                     playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                Else
-                    If Not IO.File.Exists(file & "vehicle_2.cfg") Then
-                        CreateFile(file & "vehicle_2.cfg")
-                        UpdateGarageVehicle(file & "vehicle_2.cfg", "False")
-                        LoadGarageVehicle2(file & "vehicle_2.cfg", veh2Pos, vehRot04, -60)
-                        IfTransferVehicle()
-                        Game.FadeScreenOut(500)
-                        Wait(&H3E8)
-                        playerPed.CurrentVehicle.Delete()
-                        If Not veh2 = Nothing Then
-                            playerPed.Position = veh2Pos
-                            SetIntoVehicle(playerPed, veh2, VehicleSeat.Driver)
-                        Else
-                            playerPed.Position = veh2Pos
-                        End If
-                        Wait(500)
-                        Game.FadeScreenIn(500)
-                        playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                    Else
-                        If Not IO.File.Exists(file & "vehicle_3.cfg") Then
-                            CreateFile(file & "vehicle_3.cfg")
-                            UpdateGarageVehicle(file & "vehicle_3.cfg", "False")
-                            LoadGarageVehicle3(file & "vehicle_3.cfg", veh3Pos, vehRot04, -60)
-                            IfTransferVehicle()
-                            Game.FadeScreenOut(500)
-                            Wait(&H3E8)
-                            playerPed.CurrentVehicle.Delete()
-                            If Not veh3 = Nothing Then
-                                playerPed.Position = veh3Pos
-                                SetIntoVehicle(playerPed, veh3, VehicleSeat.Driver)
-                            Else
-                                playerPed.Position = veh3Pos
-                            End If
-                            Wait(500)
-                            Game.FadeScreenIn(500)
-                            playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                        Else
-                            If Not IO.File.Exists(file & "vehicle_4.cfg") Then
-                                CreateFile(file & "vehicle_4.cfg")
-                                UpdateGarageVehicle(file & "vehicle_4.cfg", "False")
-                                LoadGarageVehicle4(file & "vehicle_4.cfg", veh4Pos, vehRot04, -60)
-                                IfTransferVehicle()
-                                Game.FadeScreenOut(500)
-                                Wait(&H3E8)
-                                playerPed.CurrentVehicle.Delete()
-                                If Not veh4 = Nothing Then
-                                    playerPed.Position = veh4Pos
-                                    SetIntoVehicle(playerPed, veh4, VehicleSeat.Driver)
-                                Else
-                                    playerPed.Position = veh4Pos
-                                End If
-                                Wait(500)
-                                Game.FadeScreenIn(500)
-                                playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                            Else
-                                If Not IO.File.Exists(file & "vehicle_5.cfg") Then
-                                    CreateFile(file & "vehicle_5.cfg")
-                                    UpdateGarageVehicle(file & "vehicle_5.cfg", "False")
-                                    LoadGarageVehicle5(file & "vehicle_5.cfg", veh5Pos, vehRot59, -60)
-                                    IfTransferVehicle()
-                                    Game.FadeScreenOut(500)
-                                    Wait(&H3E8)
-                                    playerPed.CurrentVehicle.Delete()
-                                    If Not veh5 = Nothing Then
-                                        playerPed.Position = veh5Pos
-                                        SetIntoVehicle(playerPed, veh5, VehicleSeat.Driver)
-                                    Else
-                                        playerPed.Position = veh5Pos
-                                    End If
-                                    Wait(500)
-                                    Game.FadeScreenIn(500)
-                                    playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                                Else
-                                    If Not IO.File.Exists(file & "vehicle_6.cfg") Then
-                                        CreateFile(file & "vehicle_6.cfg")
-                                        UpdateGarageVehicle(file & "vehicle_6.cfg", "False")
-                                        LoadGarageVehicle6(file & "vehicle_6.cfg", veh6Pos, vehRot59, -60)
-                                        IfTransferVehicle()
-                                        Game.FadeScreenOut(500)
-                                        Wait(&H3E8)
-                                        playerPed.CurrentVehicle.Delete()
-                                        If Not veh6 = Nothing Then
-                                            playerPed.Position = veh6Pos
-                                            SetIntoVehicle(playerPed, veh6, VehicleSeat.Driver)
-                                        Else
-                                            playerPed.Position = veh6Pos
-                                        End If
-                                        Wait(500)
-                                        Game.FadeScreenIn(500)
-                                        playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                                    Else
-                                        If Not IO.File.Exists(file & "vehicle_7.cfg") Then
-                                            CreateFile(file & "vehicle_7.cfg")
-                                            UpdateGarageVehicle(file & "vehicle_7.cfg", "False")
-                                            LoadGarageVehicle7(file & "vehicle_7.cfg", veh7Pos, vehRot59, -60)
-                                            IfTransferVehicle()
-                                            Game.FadeScreenOut(500)
-                                            Wait(&H3E8)
-                                            playerPed.CurrentVehicle.Delete()
-                                            If Not veh7 = Nothing Then
-                                                playerPed.Position = veh7Pos
-                                                SetIntoVehicle(playerPed, veh7, VehicleSeat.Driver)
-                                            Else
-                                                playerPed.Position = veh7Pos
-                                            End If
-                                            Wait(500)
-                                            Game.FadeScreenIn(500)
-                                            playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                                        Else
-                                            If Not IO.File.Exists(file & "vehicle_8.cfg") Then
-                                                CreateFile(file & "vehicle_8.cfg")
-                                                UpdateGarageVehicle(file & "vehicle_8.cfg", "False")
-                                                LoadGarageVehicle8(file & "vehicle_8.cfg", veh8Pos, vehRot59, -60)
-                                                IfTransferVehicle()
-                                                Game.FadeScreenOut(500)
-                                                Wait(&H3E8)
-                                                playerPed.CurrentVehicle.Delete()
-                                                If Not veh8 = Nothing Then
-                                                    playerPed.Position = veh8Pos
-                                                    SetIntoVehicle(playerPed, veh8, VehicleSeat.Driver)
-                                                Else
-                                                    playerPed.Position = veh8Pos
-                                                End If
-                                                Wait(500)
-                                                Game.FadeScreenIn(500)
-                                                playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                                            Else
-                                                If Not IO.File.Exists(file & "vehicle_9.cfg") Then
-                                                    CreateFile(file & "vehicle_9.cfg")
-                                                    UpdateGarageVehicle(file & "vehicle_9.cfg", "False")
-                                                    LoadGarageVehicle9(file & "vehicle_9.cfg", veh9Pos, vehRot59, -60)
-                                                    IfTransferVehicle()
-                                                    Game.FadeScreenOut(500)
-                                                    Wait(&H3E8)
-                                                    playerPed.CurrentVehicle.Delete()
-                                                    If Not veh9 = Nothing Then
-                                                        playerPed.Position = veh9Pos
-                                                        SetIntoVehicle(playerPed, veh9, VehicleSeat.Driver)
-                                                    Else
-                                                        playerPed.Position = veh9Pos
-                                                    End If
-                                                    Wait(500)
-                                                    Game.FadeScreenIn(500)
-                                                    playerPed.Task.LeaveVehicle(playerPed.CurrentVehicle, True)
-                                                Else
-                                                    UI.ShowSubtitle(GrgFull)
-                                                    ShowAllHiddenMapObject()
-                                                End If
-                                            End If
-                                        End If
-                                    End If
-                                End If
-                            End If
-                        End If
-                    End If
+
+                    ' If we've found a free slot, exit the function immediately
+                    Exit Sub
                 End If
-            End If
+            Next
+
+            ' If we've not found a free slot, show a Garage Full message
+            UI.ShowSubtitle(GrgFull)
+            ShowAllHiddenMapObject()
+
         Catch ex As Exception
             logger.Log(ex.Message & " " & ex.StackTrace)
         End Try
@@ -781,16 +425,11 @@ Public Class TenCarGarage
                 If My.Settings.RefreshGrgVehs Then RefreshGarageVehicles(CurrentPath)
             Else
                 If Not Game.Player.Character.IsInVehicle Then
-                    If Not veh0 = Nothing Then veh0.Delete()
-                    If Not veh1 = Nothing Then veh1.Delete()
-                    If Not veh2 = Nothing Then veh2.Delete()
-                    If Not veh3 = Nothing Then veh3.Delete()
-                    If Not veh4 = Nothing Then veh4.Delete()
-                    If Not veh5 = Nothing Then veh5.Delete()
-                    If Not veh6 = Nothing Then veh6.Delete()
-                    If Not veh7 = Nothing Then veh7.Delete()
-                    If Not veh8 = Nothing Then veh8.Delete()
-                    If Not veh9 = Nothing Then veh9.Delete()
+                    For i = 0 To vehicleList.GetUpperBound(0)
+                        If vehicleList(i) <> Nothing Then
+                            vehicleList(i).Delete()
+                        End If
+                    Next
                 End If
             End If
 
@@ -817,37 +456,13 @@ Public Class TenCarGarage
 
         If playerPed.IsInVehicle AndAlso playerPed.CurrentVehicle.Speed > 1.5 AndAlso InteriorID = playerInterior AndAlso IsInGarageVehicle(playerPed) Then 'GarageMiddleDistance < 20.0
             Dim PPCV As Integer = -1
-            If playerPed.CurrentVehicle = veh0 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_0.cfg")
-                PPCV = 0
-            ElseIf playerPed.CurrentVehicle = veh1 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_1.cfg")
-                PPCV = 1
-            ElseIf playerPed.CurrentVehicle = veh2 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_2.cfg")
-                PPCV = 2
-            ElseIf playerPed.CurrentVehicle = veh3 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_3.cfg")
-                PPCV = 3
-            ElseIf playerPed.CurrentVehicle = veh4 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_4.cfg")
-                PPCV = 4
-            ElseIf playerPed.CurrentVehicle = veh5 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_5.cfg")
-                PPCV = 5
-            ElseIf playerPed.CurrentVehicle = veh6 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_6.cfg")
-                PPCV = 6
-            ElseIf playerPed.CurrentVehicle = veh7 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_7.cfg")
-                PPCV = 7
-            ElseIf playerPed.CurrentVehicle = veh8 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_8.cfg")
-                PPCV = 8
-            ElseIf playerPed.CurrentVehicle = veh9 Then
-                WriteCfgValue("Active", "True", CurrentPath & "vehicle_9.cfg")
-                PPCV = 9
-            End If
+
+            For i = 0 To vehicleList.GetUpperBound(0)
+                WriteCfgValue("Active", "True", CurrentPath & "vehicle_" + i.ToString() + ".cfg")
+                If playerPed.CurrentVehicle = vehicleList(i) Then
+                    PPCV = i
+                End If
+            Next
 
             Game.FadeScreenOut(500)
             Wait(&H3E8)
@@ -1020,16 +635,11 @@ Public Class TenCarGarage
 
     Public Sub OnAborted() Handles MyBase.Aborted
         Try
-            If Not veh0 = Nothing Then veh0.Delete()
-            If Not veh1 = Nothing Then veh1.Delete()
-            If Not veh2 = Nothing Then veh2.Delete()
-            If Not veh3 = Nothing Then veh3.Delete()
-            If Not veh4 = Nothing Then veh4.Delete()
-            If Not veh5 = Nothing Then veh5.Delete()
-            If Not veh6 = Nothing Then veh6.Delete()
-            If Not veh7 = Nothing Then veh7.Delete()
-            If Not veh8 = Nothing Then veh8.Delete()
-            If Not veh9 = Nothing Then veh9.Delete()
+            For i = 0 To vehicleList.GetUpperBound(0)
+                If vehicleList(i) <> Nothing Then
+                    vehicleList(i).Delete()
+                End If
+            Next
         Catch ex As Exception
         End Try
     End Sub

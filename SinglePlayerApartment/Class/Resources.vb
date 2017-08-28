@@ -632,7 +632,7 @@ Label_005C:
     Public Shared Function IsInGarageVehicle(PlayerPed As Ped) As Boolean
         Dim Result As Boolean
         Select Case PlayerPed.CurrentVehicle
-            Case TenCarGarage.veh0, TenCarGarage.veh1, TenCarGarage.veh2, TenCarGarage.veh3, TenCarGarage.veh4, TenCarGarage.veh5, TenCarGarage.veh6, TenCarGarage.veh7, TenCarGarage.veh8, TenCarGarage.veh9
+            Case TenCarGarage.vehicleList(0), TenCarGarage.vehicleList(1), TenCarGarage.vehicleList(2), TenCarGarage.vehicleList(3), TenCarGarage.vehicleList(4), TenCarGarage.vehicleList(5), TenCarGarage.vehicleList(6), TenCarGarage.vehicleList(7), TenCarGarage.vehicleList(8), TenCarGarage.vehicleList(9)
                 Result = True
             Case SixCarGarage.veh0, SixCarGarage.veh1, SixCarGarage.veh2, SixCarGarage.veh3, SixCarGarage.veh4, SixCarGarage.veh5
                 Result = True

@@ -2241,25 +2241,25 @@ Public Class Mechanic
                 Else
                     Select Case GarageMenuSelectedFile
                         Case "vehicle_0.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh0.Delete() Else SixCarGarage.veh0.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(0).Delete() Else SixCarGarage.veh0.Delete()
                         Case "vehicle_1.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh1.Delete() Else SixCarGarage.veh1.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(1).Delete() Else SixCarGarage.veh1.Delete()
                         Case "vehicle_2.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh2.Delete() Else SixCarGarage.veh2.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(2).Delete() Else SixCarGarage.veh2.Delete()
                         Case "vehicle_3.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh3.Delete() Else SixCarGarage.veh3.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(3).Delete() Else SixCarGarage.veh3.Delete()
                         Case "vehicle_4.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh4.Delete() Else SixCarGarage.veh4.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(4).Delete() Else SixCarGarage.veh4.Delete()
                         Case "vehicle_5.cfg"
-                            If SelectedGarage = "Ten" Then TenCarGarage.veh5.Delete() Else SixCarGarage.veh5.Delete()
+                            If SelectedGarage = "Ten" Then TenCarGarage.vehicleList(5).Delete() Else SixCarGarage.veh5.Delete()
                         Case "vehicle_6.cfg"
-                            TenCarGarage.veh6.Delete()
+                            TenCarGarage.vehicleList(6).Delete()
                         Case "vehicle_7.cfg"
-                            TenCarGarage.veh7.Delete()
+                            TenCarGarage.vehicleList(7).Delete()
                         Case "vehicle_8.cfg"
-                            TenCarGarage.veh8.Delete()
+                            TenCarGarage.vehicleList(8).Delete()
                         Case "vehicle_9.cfg"
-                            TenCarGarage.veh9.Delete()
+                            TenCarGarage.vehicleList(9).Delete()
                     End Select
                     SinglePlayerApartment.player.Money = (playerCash + VehPrice)
                     CreateGarageMenu(Path)
@@ -2279,64 +2279,64 @@ Public Class Mechanic
                     Select Case GarageMenuSelectedFile
                         Case "vehicle_0.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh0.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh0.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(0).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(0).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh0.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh0.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_1.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh1.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh1.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(1).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(1).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh1.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh1.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_2.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh2.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh2.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(2).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(2).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh2.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh2.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_3.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh3.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh3.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(3).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(3).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh3.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh3.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_4.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh4.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh4.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(4).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(4).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh4.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh4.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_5.cfg"
                             If SelectedGarage = "Ten" Then
-                                TenCarGarage.veh5.NumberPlate = VehPlate
-                                WriteCfgValue("PlateNumber", TenCarGarage.veh5.NumberPlate, Path & GarageMenuSelectedFile)
+                                TenCarGarage.vehicleList(5).NumberPlate = VehPlate
+                                WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(5).NumberPlate, Path & GarageMenuSelectedFile)
                             Else
                                 SixCarGarage.veh5.NumberPlate = VehPlate
                                 WriteCfgValue("PlateNumber", SixCarGarage.veh5.NumberPlate, Path & GarageMenuSelectedFile)
                             End If
                         Case "vehicle_6.cfg"
-                            TenCarGarage.veh6.NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.veh6.NumberPlate, Path & GarageMenuSelectedFile)
+                            TenCarGarage.vehicleList(6).NumberPlate = VehPlate
+                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(6).NumberPlate, Path & GarageMenuSelectedFile)
                         Case "vehicle_7.cfg"
-                            TenCarGarage.veh7.NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.veh7.NumberPlate, Path & GarageMenuSelectedFile)
+                            TenCarGarage.vehicleList(7).NumberPlate = VehPlate
+                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(7).NumberPlate, Path & GarageMenuSelectedFile)
                         Case "vehicle_8.cfg"
-                            TenCarGarage.veh8.NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.veh8.NumberPlate, Path & GarageMenuSelectedFile)
+                            TenCarGarage.vehicleList(8).NumberPlate = VehPlate
+                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(8).NumberPlate, Path & GarageMenuSelectedFile)
                         Case "vehicle_9.cfg"
-                            TenCarGarage.veh9.NumberPlate = VehPlate
-                            WriteCfgValue("PlateNumber", TenCarGarage.veh9.NumberPlate, Path & GarageMenuSelectedFile)
+                            TenCarGarage.vehicleList(9).NumberPlate = VehPlate
+                            WriteCfgValue("PlateNumber", TenCarGarage.vehicleList(9).NumberPlate, Path & GarageMenuSelectedFile)
                     End Select
                 End If
                 If SelectedGarage = "Ten" Then TenCarGarage.LoadGarageVechicles(Path)
@@ -2434,25 +2434,25 @@ Public Class Mechanic
             If SelectedGarage = "Ten" Then
                 Select Case MoveIndex
                     Case 0
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh0Pos.X, TenCarGarage.veh0Pos.Y, TenCarGarage.veh0Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(0).X, TenCarGarage.vehiclePositions(0).Y, TenCarGarage.vehiclePositions(0).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 1
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh1Pos.X, TenCarGarage.veh1Pos.Y, TenCarGarage.veh1Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(1).X, TenCarGarage.vehiclePositions(1).Y, TenCarGarage.vehiclePositions(1).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 2
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh2Pos.X, TenCarGarage.veh2Pos.Y, TenCarGarage.veh2Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(2).X, TenCarGarage.vehiclePositions(2).Y, TenCarGarage.vehiclePositions(2).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 3
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh3Pos.X, TenCarGarage.veh3Pos.Y, TenCarGarage.veh3Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(3).X, TenCarGarage.vehiclePositions(3).Y, TenCarGarage.vehiclePositions(3).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 4
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh4Pos.X, TenCarGarage.veh4Pos.Y, TenCarGarage.veh4Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(4).X, TenCarGarage.vehiclePositions(4).Y, TenCarGarage.vehiclePositions(4).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 5
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh5Pos.X, TenCarGarage.veh5Pos.Y, TenCarGarage.veh5Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(5).X, TenCarGarage.vehiclePositions(5).Y, TenCarGarage.vehiclePositions(5).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 6
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh6Pos.X, TenCarGarage.veh6Pos.Y, TenCarGarage.veh6Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(6).X, TenCarGarage.vehiclePositions(6).Y, TenCarGarage.vehiclePositions(6).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 7
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh7Pos.X, TenCarGarage.veh7Pos.Y, TenCarGarage.veh7Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(7).X, TenCarGarage.vehiclePositions(7).Y, TenCarGarage.vehiclePositions(7).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 8
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh8Pos.X, TenCarGarage.veh8Pos.Y, TenCarGarage.veh8Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(8).X, TenCarGarage.vehiclePositions(8).Y, TenCarGarage.vehiclePositions(8).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                     Case 9
-                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.veh9Pos.X, TenCarGarage.veh9Pos.Y, TenCarGarage.veh9Pos.Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
+                        World.DrawMarker(MarkerType.UpsideDownCone, New Vector3(TenCarGarage.vehiclePositions(9).X, TenCarGarage.vehiclePositions(9).Y, TenCarGarage.vehiclePositions(9).Z + 1.5), Vector3.Zero, Vector3.Zero, New Vector3(0.3, 0.3, 0.3), Drawing.Color.Red)
                 End Select
             ElseIf SelectedGarage = "Six" Then
                 Select Case MoveIndex
